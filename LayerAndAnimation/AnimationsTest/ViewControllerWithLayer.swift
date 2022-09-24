@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ViewControllerWithLayer.swift
 //  AnimationsTest
 //
 //  Created by Igor Buzykin on 19.09.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LayerViewController: UIViewController {
+class ViewControllerWithLayer: UIViewController {
     
     private var layer: CALayer!
 

@@ -1,5 +1,5 @@
 //
-//  MyViewController.swift
+//  ViewControllerWithUIView.swift
 //  AnimationsTest
 //
 //  Created by Igor Buzykin on 19.09.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MyViewController: UIViewController {
+class ViewControllerWithUIView: UIViewController {
     
     private var customView: UIView!
 

@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0GE-9E-2kf">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -12,16 +10,16 @@
         <!--Layer-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LayerViewController" customModule="AnimationsTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewControllerWithLayer" customModule="AnimationsTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="T8a-Xm-r8t">
-                                <rect key="frame" x="20" y="649.5" width="374" height="143.5"/>
+                                <rect key="frame" x="20" y="388" width="560" height="143"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQK-jl-cQu">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="34.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="34.333333333333336"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Changing Layer"/>
                                         <connections>
@@ -29,7 +27,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4v8-pa-lad">
-                                        <rect key="frame" x="0.0" y="54.5" width="374" height="34.5"/>
+                                        <rect key="frame" x="0.0" y="54.333333333333314" width="560" height="34.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="CATransaction on Layer"/>
                                         <connections>
@@ -37,7 +35,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abb-1g-KKN">
-                                        <rect key="frame" x="0.0" y="109" width="374" height="34.5"/>
+                                        <rect key="frame" x="0.0" y="108.66666666666669" width="560" height="34.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="UIView.animate"/>
                                         <connections>
@@ -68,19 +66,19 @@
             </objects>
             <point key="canvasLocation" x="1916" y="-1086"/>
         </scene>
-        <!--My View Controller-->
+        <!--View Controller WithUI View-->
         <scene sceneID="ciE-G1-XQI">
             <objects>
-                <viewController id="AlN-kd-lhh" customClass="MyViewController" customModule="AnimationsTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="AlN-kd-lhh" customClass="ViewControllerWithUIView" customModule="AnimationsTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AFY-bk-KND">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="vjd-Xd-H12">
-                                <rect key="frame" x="20" y="704" width="374" height="89"/>
+                                <rect key="frame" x="20" y="442.33333333333331" width="560" height="88.666666666666686"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yEt-qE-vkc">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="34.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="34.333333333333336"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="CATransaction on View"/>
                                         <connections>
@@ -88,7 +86,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K5l-fN-V7u">
-                                        <rect key="frame" x="0.0" y="54.5" width="374" height="34.5"/>
+                                        <rect key="frame" x="0.0" y="54.333333333333371" width="560" height="34.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Nil Layer Delegate"/>
                                         <connections>
