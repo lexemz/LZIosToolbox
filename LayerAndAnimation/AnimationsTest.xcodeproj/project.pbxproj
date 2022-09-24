@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		78B6102E28DFB75000C5055D /* ViewControllerWithCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B6102D28DFB75000C5055D /* ViewControllerWithCustomView.swift */; };
 		F91F695028D8882C00CF24B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91F694F28D8882C00CF24B8 /* AppDelegate.swift */; };
 		F91F695228D8882C00CF24B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91F695128D8882C00CF24B8 /* SceneDelegate.swift */; };
 		F91F695428D8882C00CF24B8 /* ViewControllerWithLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91F695328D8882C00CF24B8 /* ViewControllerWithLayer.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		78B6102D28DFB75000C5055D /* ViewControllerWithCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerWithCustomView.swift; sourceTree = "<group>"; };
 		F91F694C28D8882C00CF24B8 /* AnimationsTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimationsTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F91F694F28D8882C00CF24B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F91F695128D8882C00CF24B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				F91F695128D8882C00CF24B8 /* SceneDelegate.swift */,
 				F91F695328D8882C00CF24B8 /* ViewControllerWithLayer.swift */,
 				F91F696328D8B6E500CF24B8 /* ViewControllerWithUIView.swift */,
+				78B6102D28DFB75000C5055D /* ViewControllerWithCustomView.swift */,
 				F91F695528D8882C00CF24B8 /* Main.storyboard */,
 				F91F695828D8882E00CF24B8 /* Assets.xcassets */,
 				F91F695A28D8882E00CF24B8 /* LaunchScreen.storyboard */,
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F91F695428D8882C00CF24B8 /* ViewControllerWithLayer.swift in Sources */,
+				78B6102E28DFB75000C5055D /* ViewControllerWithCustomView.swift in Sources */,
 				F91F695028D8882C00CF24B8 /* AppDelegate.swift in Sources */,
 				F91F696428D8B6E500CF24B8 /* ViewControllerWithUIView.swift in Sources */,
 				F91F695228D8882C00CF24B8 /* SceneDelegate.swift in Sources */,

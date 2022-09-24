@@ -51,10 +51,3 @@ class ViewControllerWithUIView: UIViewController {
         view.addSubview(customView)
     }
 }
-
-class LXView: UIView {
-    override func action(for layer: CALayer, forKey event: String) -> CAAction? {
-        print("event: \(event)")
-        return nil
-    }
-}
