@@ -7,14 +7,12 @@
 
 import UIKit
 
-
 class LXView: UIView {
-    override func action(for layer: CALayer, forKey event: String) -> CAAction? {
-        print("event: \(event)")
-        return nil
-    }
+  override func action(for layer: CALayer, forKey event: String) -> CAAction? {
+    print("event: \(event)")
+    return nil
+  }
 }
-
 
 class ViewControllerWithCustomView: UIViewController {
   private var customView: LXView!

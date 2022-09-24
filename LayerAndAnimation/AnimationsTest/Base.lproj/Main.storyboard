@@ -117,10 +117,10 @@
             </objects>
             <point key="canvasLocation" x="1874" y="-240"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller With Custom View-->
         <scene sceneID="4ME-kz-33b">
             <objects>
-                <viewController id="cUw-Bg-3IM" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewControllerWithCustomView" id="cUw-Bg-3IM" customClass="ViewControllerWithCustomView" customModule="AnimationsTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rMM-tR-3cB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -181,11 +181,11 @@
             </objects>
             <point key="canvasLocation" x="91" y="-394"/>
         </scene>
-        <!--View-->
+        <!--UIView-->
         <scene sceneID="IYP-wC-1UV">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JzH-RQ-1KG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="View" image="square.3.layers.3d.down.right" catalog="system" id="DFK-pn-5BN"/>
+                    <tabBarItem key="tabBarItem" title="UIView" image="square.3.layers.3d.down.right" catalog="system" id="DFK-pn-5BN"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="WOi-VY-spA">
                         <rect key="frame" x="0.0" y="48" width="414" height="44"/>
@@ -200,11 +200,11 @@
             </objects>
             <point key="canvasLocation" x="1168" y="-240"/>
         </scene>
-        <!--Custom View-->
+        <!--Custom UIView-->
         <scene sceneID="rKf-B7-JkP">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g5I-zi-Kln" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Custom View" image="square.3.layers.3d.down.right" catalog="system" id="3Ud-fR-aOQ"/>
+                    <tabBarItem key="tabBarItem" title="Custom UIView" image="square.3.layers.3d.down.right" catalog="system" id="3Ud-fR-aOQ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wK4-0J-Pcf">
                         <rect key="frame" x="0.0" y="48" width="414" height="44"/>
