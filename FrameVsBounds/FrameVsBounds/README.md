@@ -1,0 +1,1 @@
+Писал проект для статьи - [Различие Frame и Bounds в iOS. Frame vs Bounds in iOS](https://vmityuklyaev.medium.com/%D1%80%D0%B0%D0%B7%D0%BB%D0%B8%D1%87%D0%B8%D0%B5-frame-%D0%B8-bounds-%D0%B2-ios-frame-vs-bounds-in-ios-4e5aee5ed477)
