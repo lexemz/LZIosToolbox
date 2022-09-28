@@ -80,11 +80,21 @@ class ViewController: UIViewController {
     updateLabels()
   }
   
-  @IBAction func centerXSliderMoved() {}
+  @IBAction func centerXSliderMoved() {
+    containerView.center.x = CGFloat(centerXSlider.value)
+    updateLabels()
+  }
   
-  @IBAction func centerYSliderMoved() {}
+  @IBAction func centerYSliderMoved() {
+    containerView.center.y = CGFloat(centerYSlider.value)
+    updateLabels()
+  }
   
-  @IBAction func rotationSliderMoved() {}
+  @IBAction func rotationSliderMoved() {
+    let affineTransform = CGAffineTransform(rotationAngle: CGFloat(rotationSlider.value))
+    containerView.transform = affineTransform
+    updateLabels()
+  }
   
   @IBAction func touchUpOnSlider() {
     logInfo()
@@ -141,6 +151,18 @@ class ViewController: UIViewController {
     boundsHeightSlider.maximumValue = Float(containerView.bounds.size.height * 2)
     boundsHeightSlider.value = Float(containerView.bounds.size.height)
     
+    centerXSlider.minimumValue = 0
+    centerXSlider.maximumValue = Float(containerView.center.x * 2)
+    centerXSlider.value = Float(containerView.center.x)
+    
+    centerYSlider.minimumValue = 0
+    centerYSlider.maximumValue = Float(containerView.center.y * 2)
+    centerYSlider.value = Float(containerView.center.y)
+    
+    rotationSlider.minimumValue = 0
+    rotationSlider.maximumValue = .pi * 2
+    rotationSlider.value = 0
+    
     updateLabels()
   }
   
@@ -155,7 +177,7 @@ class ViewController: UIViewController {
     boundsHeightLabel.text = String(format: "bounds height = %.2f", containerView.bounds.size.height)
     centerXLabel.text = String(format: "center x = %.2f", containerView.center.x)
     centerYLabel.text = String(format: "center y = %.2f", containerView.center.y)
-//    rotationLabel.text = "rotation = \(imageview.)"
+    rotationLabel.text = String(format: "rotation = %.2f", rotationSlider.value * 180 / .pi)
   }
   
   private func logInfo() {
@@ -170,8 +192,9 @@ class ViewController: UIViewController {
     y: \(containerView.bounds.origin.y)
     width: \(containerView.bounds.size.width)
     height: \(containerView.bounds.size.height)
+    ========[Rotation]=========
+    rotation: \(rotationSlider.value * 180 / .pi) degrees
     ===========================
-    
     """
     
     print(info)
