@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="T8a-Xm-r8t">
-                                <rect key="frame" x="20" y="649.5" width="374" height="143.5"/>
+                                <rect key="frame" x="20" y="704" width="374" height="89"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQK-jl-cQu">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="34.5"/>
@@ -34,14 +34,6 @@
                                         <buttonConfiguration key="configuration" style="plain" title="CATransaction on Layer"/>
                                         <connections>
                                             <action selector="transactionTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mL8-Po-tsB"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abb-1g-KKN">
-                                        <rect key="frame" x="0.0" y="109" width="374" height="34.5"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="UIView.animate"/>
-                                        <connections>
-                                            <action selector="uiviewTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AwO-Yo-nFd"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -124,8 +116,22 @@
                     <view key="view" contentMode="scaleToFill" id="rMM-tR-3cB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ju4-rM-DDF">
+                                <rect key="frame" x="114" y="679" width="186.5" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Change UIView Layer"/>
+                                <connections>
+                                    <action selector="changeUIViewLayerTap:" destination="cUw-Bg-3IM" eventType="touchUpInside" id="NPw-Jz-oPv"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="zk2-Ah-uAw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zk2-Ah-uAw" firstAttribute="bottom" secondItem="ju4-rM-DDF" secondAttribute="bottom" constant="50" id="AN4-Zf-DpJ"/>
+                            <constraint firstItem="ju4-rM-DDF" firstAttribute="centerX" secondItem="rMM-tR-3cB" secondAttribute="centerX" id="GJe-HP-1l3"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="WnO-fH-Rtp">

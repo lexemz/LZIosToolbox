@@ -22,12 +22,13 @@ class ViewControllerWithUIView: UIViewController {
   // Не смотря на то, что мы разрешаем анимацию - она не произойдет
   @IBAction func transactionTap(_ sender: UIButton) {
     CATransaction.begin()
-    CATransaction.setAnimationDuration(1) // default value = 0.25 (1 sec)
+    CATransaction.setAnimationDuration(1)
     CATransaction.setDisableActions(false) // Разрешение анимации
     customView.layer.cornerRadius = customView.layer.frame.width / 2
     CATransaction.commit()
   }
     
+  // Эксперемент 2 - из статьи
   // Есть анимация
   @IBAction func nonDelegate(_ sender: UIButton) {
     customView.layer.delegate = nil

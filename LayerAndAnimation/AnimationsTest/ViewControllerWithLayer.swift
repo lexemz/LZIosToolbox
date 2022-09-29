@@ -19,26 +19,30 @@ class ViewControllerWithLayer: UIViewController {
     recreateLayer()
   }
     
+  // Эксперемент 1 - из статьи
   @IBAction func layerTap(_ sender: UIButton) {
+    // Animate - 0.25 sec by default
     layer.cornerRadius = layer.frame.width / 2
   }
     
   @IBAction func transactionTap(_ sender: UIButton) {
     CATransaction.begin()
-    CATransaction.setAnimationDuration(1) // default value = 0.25 (1 sec)
+    CATransaction.setAnimationDuration(1)
     CATransaction.setCompletionBlock {
       print("Complete")
     }
     layer.cornerRadius = layer.frame.width / 2
     CATransaction.commit()
-  }
     
-  @IBAction func uiviewTap(_ sender: UIButton) {
-    UIView.animate(withDuration: 1) {
-      self.layer.cornerRadius = self.layer.frame.width / 2
-    } completion: { _ in
-      print("Complete")
-    }
+    /*
+     Эквивалент транзации в API - UIKit:
+     
+     UIView.animate(withDuration: 1) {
+         self.layer.cornerRadius = self.layer.frame.width / 2
+     } completion: { completed in
+        print("completed: \(completed)")
+     }
+     */
   }
     
   private func recreateLayer() {
