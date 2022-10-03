@@ -9,6 +9,7 @@ import UIKit
 
 class LXView: UIView {
   override func action(for layer: CALayer, forKey event: String) -> CAAction? {
+    // Event - возвращает строкой имя того совйства вью (слоя), которое мы изменили
     print("event: \(event)")
     return nil
   }
@@ -24,6 +25,10 @@ class ViewControllerWithCustomView: UIViewController {
   
   @IBAction func recreateViewTap(_ sender: UIBarButtonItem) {
     recreateView()
+  }
+  
+  @IBAction func changeUIViewLayerTap(_ sender: UIButton) {
+    customView.layer.cornerRadius = customView.frame.width / 2
   }
   
   private func recreateView() {
