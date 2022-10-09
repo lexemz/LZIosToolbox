@@ -77,3 +77,4 @@ xcuserdata/
 
 # End of https://www.toptal.com/developers/gitignore/api/xcode,macos,visualstudiocode
 Socket.io/Pods
+Socket.io/Server/node_modules
