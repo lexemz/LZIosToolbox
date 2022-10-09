@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Socket.IO
+//  Socket.io
 //
 //  Created by Igor Buzykin on 09.10.2022.
 //

@@ -1,11 +1,12 @@
 //
 //  ViewController.swift
-//  Socket.IO
+//  Socket.io
 //
 //  Created by Igor Buzykin on 09.10.2022.
 //
 
 import UIKit
+import SocketIO
 
 class ViewController: UIViewController {
 
@@ -16,4 +17,3 @@ class ViewController: UIViewController {
 
 
 }
-
