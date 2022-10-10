@@ -9,11 +9,24 @@ import UIKit
 import SocketIO
 
 class ViewController: UIViewController {
+  
+  @IBOutlet var countLabel: UILabel!
+  
+  private let socket = SocketClient()
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view.
+    socket.delegate = self
+    socket.connect()
   }
 
+  @IBAction func countTap(_ sender: UIButton) {
+    socket.send()
+  }
+}
 
+extension ViewController: SocketClientDelegate {
+  func counterMessage() {
+    countLabel.text = String(Int(countLabel.text!)! + 1)
+  }
 }

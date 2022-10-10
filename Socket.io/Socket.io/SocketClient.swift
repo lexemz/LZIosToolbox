@@ -8,13 +8,20 @@
 import Foundation
 import SocketIO
 
-class SocketClient {
-  let manager: SocketManager
-  let socket: SocketIOClient
+protocol SocketClientDelegate: AnyObject {
+  func counterMessage()
+}
 
-  init(url: URL) {
-    self.manager = SocketManager(socketURL: url)
+class SocketClient {
+  weak var delegate: SocketClientDelegate?
+
+  private let manager: SocketManager
+  private let socket: SocketIOClient
+  
+  init() {
+    self.manager = SocketManager(socketURL: URL(string: "ws://localhost:3000")!, config: [.log(true), .compress])
     self.socket = manager.defaultSocket
+    setupSocketEvents()
   }
 
   func connect() {
@@ -26,6 +33,17 @@ class SocketClient {
   }
 
   func send() {
-//    socket.emit(<#T##event: String##String#>, <#T##items: SocketData...##SocketData#>)
+    socket.emit("counter")
+  }
+  
+  private func setupSocketEvents() {
+    socket.on("counter") { [weak self] data, ack in
+      guard let self else { return }
+      self.delegate?.counterMessage()
+    }
+    
+    socket.on(clientEvent: .connect) { data, ack in
+      print("Socket did connect: \(data)")
+    }
   }
 }
