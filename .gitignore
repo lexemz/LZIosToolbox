@@ -78,3 +78,4 @@ xcuserdata/
 # End of https://www.toptal.com/developers/gitignore/api/xcode,macos,visualstudiocode
 Pods
 node_modules
+.idea
