@@ -9,7 +9,7 @@ import Foundation
 import SocketIO
 
 struct Position: SocketData {
-  let x: CGFloat
-  let y: CGFloat
+  let x: Double
+  let y: Double
   let client: String
 }

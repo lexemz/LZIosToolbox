@@ -9,7 +9,7 @@ import Foundation
 import SocketIO
 
 protocol SocketIOManagerDelegate: AnyObject {
-  func socketManager(_ socketManager: SocketIOManager, didReceive position: Position)
+  func socketManager(_ socketManager: SocketIOManager, didReceive position: [String: Any])
 }
 
 final class SocketIOManager {
@@ -20,7 +20,7 @@ final class SocketIOManager {
   
   init() {
     self.manager = SocketManager(
-      socketURL: URL(string: "ws://localhost:3000")!,
+      socketURL: URL(string: "ws://192.168.1.2:3000")!,
       config: [.log(true), .compress]
     )
     self.socket = manager.defaultSocket
@@ -34,19 +34,17 @@ final class SocketIOManager {
   func disconnect() {
     socket.disconnect()
   }
-
-  func send(position: Position) {
+  
+  func send(position: [String: Any]) {
     socket.emit("position", position)
   }
   
   private func setupSocketEvents() {
     socket.on("position") { [weak self] data, ack in
       guard let self = self else { return }
-      guard let position = data.socketRepresentation() as? Position else {
-        print("casting failed")
-        return
-      }
-      self.delegate?.socketManager(self, didReceive: position)
+      guard let data = data.first as? [String: Any] else { return }
+      print("REVEIVED DATA: \(data)")
+      self.delegate?.socketManager(self, didReceive: data)
     }
   }
 }

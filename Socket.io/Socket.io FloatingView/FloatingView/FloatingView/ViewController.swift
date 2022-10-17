@@ -15,12 +15,12 @@ class ViewController: UIViewController {
     view.frame.size = CGSize(width: 100, height: 100)
     return view
   }()
-  
+
   private let socketManager = SocketIOManager()
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+
     socketManager.delegate = self
     socketManager.connect()
     view.addSubview(floatView)
@@ -38,14 +38,18 @@ class ViewController: UIViewController {
     switch recognizer.state {
     case .changed:
       let translation = recognizer.translation(in: view)
-      
+
       let newX = floatView.center.x + translation.x
       let newY = floatView.center.y + translation.y
-      
+
       print(newX, newY)
-      
-//      socketManager.send(position: Position(x: newX, y: newY, client: "1"))
-      
+
+      socketManager.send(position: [
+        "x": Double(newX),
+        "y": Double(newY),
+        "client": 1
+      ])
+
       floatView.center = CGPoint(x: newX, y: newY)
       recognizer.setTranslation(.zero, in: view)
     default: break
@@ -54,7 +58,11 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: SocketIOManagerDelegate {
-  func socketManager(_ socketManager: SocketIOManager, didReceive position: Position) {
-    print(position)
+  func socketManager(_ socketManager: SocketIOManager, didReceive position: [String: Any]) {
+    guard
+      let x = position["x"] as? CGFloat,
+      let y = position["y"] as? CGFloat
+    else { return }
+    floatView.center = CGPoint(x: x, y: y)
   }
 }
