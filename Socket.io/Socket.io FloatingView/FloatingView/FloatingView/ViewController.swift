@@ -49,6 +49,9 @@ class ViewController: UIViewController {
         "y": Double(newY),
         "client": 1
       ])
+      
+      let position = Position(x: newX, y: newY, client: "1")
+      socketManager.send(position: position)
 
       floatView.center = CGPoint(x: newX, y: newY)
       recognizer.setTranslation(.zero, in: view)
@@ -58,6 +61,10 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: SocketIOManagerDelegate {
+  func socketManager(_ socketManager: SocketIOManager, didReceive position: Position) {
+    floatView.center = CGPoint(x: position.x, y: position.y)
+  }
+  
   func socketManager(_ socketManager: SocketIOManager, didReceive position: [String: Any]) {
     guard
       let x = position["x"] as? CGFloat,

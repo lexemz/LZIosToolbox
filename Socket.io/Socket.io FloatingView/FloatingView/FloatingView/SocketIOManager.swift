@@ -10,6 +10,7 @@ import SocketIO
 
 protocol SocketIOManagerDelegate: AnyObject {
   func socketManager(_ socketManager: SocketIOManager, didReceive position: [String: Any])
+  func socketManager(_ socketManager: SocketIOManager, didReceive position: Position)
 }
 
 final class SocketIOManager {
@@ -39,12 +40,28 @@ final class SocketIOManager {
     socket.emit("position", position)
   }
   
+  func send(position: Position) {
+    socket.emit("position", position)
+  }
+  
   private func setupSocketEvents() {
-    socket.on("position") { [weak self] data, ack in
+    socket.on("position") { [weak self] data, _ in
       guard let self = self else { return }
       guard let data = data.first as? [String: Any] else { return }
       print("REVEIVED DATA: \(data)")
-      self.delegate?.socketManager(self, didReceive: data)
+//      self.delegate?.socketManager(self, didReceive: data)
+    }
+    
+    socket.on("position") { [weak self] data, _ in
+      guard let self = self else { return }
+      
+      guard
+        let firstData = data.first,
+        let data = try? JSONSerialization.data(withJSONObject: firstData),
+        let position = try? JSONDecoder().decode(Position.self, from: data)
+      else { return }
+      print("REVEIVED DATA: \(data)")
+      self.delegate?.socketManager(self, didReceive: position)
     }
   }
 }
