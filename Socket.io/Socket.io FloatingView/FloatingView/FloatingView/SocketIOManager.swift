@@ -40,7 +40,7 @@ final class SocketIOManager {
   }
   
   private func setupSocketEvents() {
-    socket.on("position") { [weak self] data, ack in
+    socket.on("position") { [weak self] data, _ in
       guard let self = self else { return }
       guard let data = data.first as? [String: Any] else { return }
       print("REVEIVED DATA: \(data)")

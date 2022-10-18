@@ -12,4 +12,12 @@ struct Position: SocketData {
   let x: Double
   let y: Double
   let client: String
+  
+  func socketRepresentation() -> SocketData {
+    [
+      "x": x,
+      "y": y,
+      "client": client
+    ]
+  }
 }
