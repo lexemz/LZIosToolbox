@@ -8,7 +8,7 @@
 import Foundation
 import SocketIO
 
-struct Position: SocketData {
+struct Position: SocketData, Decodable {
   let x: Double
   let y: Double
   let client: String
