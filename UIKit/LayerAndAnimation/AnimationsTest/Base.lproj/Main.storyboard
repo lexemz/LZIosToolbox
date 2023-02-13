@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0GE-9E-2kf">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller With Layer-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewControllerWithLayer" customModule="AnimationsTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="T8a-Xm-r8t">
+                                <rect key="frame" x="20" y="704" width="374" height="89"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQK-jl-cQu">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="34.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Changing Layer"/>
+                                        <connections>
+                                            <action selector="layerTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Urz-ct-71a"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4v8-pa-lad">
+                                        <rect key="frame" x="0.0" y="54.5" width="374" height="34.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="CATransaction on Layer"/>
+                                        <connections>
+                                            <action selector="transactionTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mL8-Po-tsB"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="T8a-Xm-r8t" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="fgL-tX-cjV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="T8a-Xm-r8t" secondAttribute="trailing" constant="20" id="nba-54-DCo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="T8a-Xm-r8t" secondAttribute="bottom" constant="20" id="tCN-Jx-8HZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="NZv-dC-Jl3">
+                        <barButtonItem key="rightBarButtonItem" title="Recreate Layer" id="HfL-Po-rIy">
+                            <connections>
+                                <action selector="recreateLayerTap:" destination="BYZ-38-t0r" id="kNL-qz-nCL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1874" y="-891"/>
+        </scene>
+        <!--View Controller WithUI View-->
+        <scene sceneID="ciE-G1-XQI">
+            <objects>
+                <viewController id="AlN-kd-lhh" customClass="ViewControllerWithUIView" customModule="AnimationsTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AFY-bk-KND">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="vjd-Xd-H12">
+                                <rect key="frame" x="20" y="704" width="374" height="89"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yEt-qE-vkc">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="34.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="CATransaction on View"/>
+                                        <connections>
+                                            <action selector="transactionTap:" destination="AlN-kd-lhh" eventType="touchUpInside" id="wYo-tK-V7r"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K5l-fN-V7u">
+                                        <rect key="frame" x="0.0" y="54.5" width="374" height="34.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Nil Layer Delegate"/>
+                                        <connections>
+                                            <action selector="nonDelegate:" destination="AlN-kd-lhh" eventType="touchUpInside" id="sr4-gx-nGp"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JlL-kW-0aC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="JlL-kW-0aC" firstAttribute="trailing" secondItem="vjd-Xd-H12" secondAttribute="trailing" constant="20" id="CbY-9Q-u7n"/>
+                            <constraint firstItem="JlL-kW-0aC" firstAttribute="bottom" secondItem="vjd-Xd-H12" secondAttribute="bottom" constant="20" id="DqR-3K-9xh"/>
+                            <constraint firstItem="vjd-Xd-H12" firstAttribute="leading" secondItem="JlL-kW-0aC" secondAttribute="leading" constant="20" id="TCi-h3-F3j"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="5hb-0S-Quh">
+                        <barButtonItem key="rightBarButtonItem" title="Recreate View" id="nl1-xj-zsf">
+                            <connections>
+                                <action selector="recreateViewTap:" destination="AlN-kd-lhh" id="4MS-dD-h9M"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aVJ-g0-dYS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1874" y="-240"/>
+        </scene>
+        <!--View Controller With Custom View-->
+        <scene sceneID="4ME-kz-33b">
+            <objects>
+                <viewController storyboardIdentifier="ViewControllerWithCustomView" id="cUw-Bg-3IM" customClass="ViewControllerWithCustomView" customModule="AnimationsTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rMM-tR-3cB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ju4-rM-DDF">
+                                <rect key="frame" x="114" y="679" width="186.5" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Change UIView Layer"/>
+                                <connections>
+                                    <action selector="changeUIViewLayerTap:" destination="cUw-Bg-3IM" eventType="touchUpInside" id="NPw-Jz-oPv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zk2-Ah-uAw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zk2-Ah-uAw" firstAttribute="bottom" secondItem="ju4-rM-DDF" secondAttribute="bottom" constant="50" id="AN4-Zf-DpJ"/>
+                            <constraint firstItem="ju4-rM-DDF" firstAttribute="centerX" secondItem="rMM-tR-3cB" secondAttribute="centerX" id="GJe-HP-1l3"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="WnO-fH-Rtp">
+                        <barButtonItem key="rightBarButtonItem" title="Recreate Custom View" id="zo7-1g-WW0">
+                            <connections>
+                                <action selector="recreateViewTap:" destination="cUw-Bg-3IM" id="JKo-DV-Q7E"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5zI-J2-xtV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1874" y="440"/>
+        </scene>
+        <!--Frame-->
+        <scene sceneID="Gxt-5i-wGJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qMy-b3-ehu" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Frame" image="square.3.layers.3d.down.right" catalog="system" id="qVw-LU-0hm"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2RL-vq-C1l">
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="F5M-in-bgx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YRl-ut-Pfd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1167" y="-891"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="fcL-VE-NCA">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="0GE-9E-2kf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="x3F-RY-zWw"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="p2e-8j-UC3">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="qMy-b3-ehu" kind="relationship" relationship="viewControllers" id="AzK-Z2-G7B"/>
+                        <segue destination="JzH-RQ-1KG" kind="relationship" relationship="viewControllers" id="IvS-s9-98B"/>
+                        <segue destination="g5I-zi-Kln" kind="relationship" relationship="viewControllers" id="SaT-Lm-KID"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3cB-Qi-Zt7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="91" y="-394"/>
+        </scene>
+        <!--UIView-->
+        <scene sceneID="IYP-wC-1UV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JzH-RQ-1KG" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="UIView" image="square.3.layers.3d.down.right" catalog="system" id="DFK-pn-5BN"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WOi-VY-spA">
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="AlN-kd-lhh" kind="relationship" relationship="rootViewController" id="mdT-Iq-DxE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lm6-bl-WRK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1168" y="-240"/>
+        </scene>
+        <!--Custom UIView-->
+        <scene sceneID="rKf-B7-JkP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g5I-zi-Kln" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Custom UIView" image="square.3.layers.3d.down.right" catalog="system" id="3Ud-fR-aOQ"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wK4-0J-Pcf">
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cUw-Bg-3IM" kind="relationship" relationship="rootViewController" id="VNM-yW-Bfn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rix-wJ-ndg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1167" y="440"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="square.3.layers.3d.down.right" catalog="system" width="122" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
