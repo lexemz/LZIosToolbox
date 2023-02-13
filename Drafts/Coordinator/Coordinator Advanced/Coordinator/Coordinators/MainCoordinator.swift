@@ -28,8 +28,8 @@ final class MainCoordinator: NSObject, Coordinator {
 	func start() {
 		let vc = StartViewController.instantiate()
 		vc.coordinator = self
-		navigationController.pushViewController(vc, animated: false)
 		navigationController.delegate = self
+		navigationController.pushViewController(vc, animated: false)
 	}
 
 	func childDidFinish(_ child: Coordinator?) {
@@ -58,10 +58,12 @@ extension MainCoordinator: MainCoordinatorProtocol {
 	func showChatVCModally() {
 		let navigationController = UINavigationController()
 		navigationController.modalPresentationStyle = .fullScreen
+
 		let childCoordinator = ChatCoordinator(navigationController: navigationController)
 		childCoordinator.parentCoordinator = self
 		childCoordinators.append(childCoordinator)
 		childCoordinator.start()
+
 		self.navigationController.present(navigationController, animated: true)
 	}
 }
