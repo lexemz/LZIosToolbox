@@ -9,8 +9,6 @@ import UIKit
 
 class RectangleBezierView: UIView {
 
-	var path: UIBezierPath!
-
 	init() {
 		super.init(frame: .zero)
 		backgroundColor = .darkGray
@@ -25,7 +23,7 @@ class RectangleBezierView: UIView {
 	}
 
 	private func createFigure() {
-		path = UIBezierPath()
+		let path = UIBezierPath()
 
 		path.move(to: .zero)
 		path.addLine(to: CGPoint(x: 0.0, y: frame.size.height))

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3138482429C4A00B0035BCAB /* Figures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3138482329C4A00B0035BCAB /* Figures.swift */; };
 		F9D0AF1A29BE685E00B510EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D0AF1929BE685E00B510EF /* AppDelegate.swift */; };
 		F9D0AF1C29BE685E00B510EF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D0AF1B29BE685E00B510EF /* SceneDelegate.swift */; };
 		F9D0AF1E29BE685E00B510EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D0AF1D29BE685E00B510EF /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3138482329C4A00B0035BCAB /* Figures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Figures.swift; sourceTree = "<group>"; };
 		F9D0AF1629BE685E00B510EF /* BezierPath.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BezierPath.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9D0AF1929BE685E00B510EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9D0AF1B29BE685E00B510EF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				F9D0AF1929BE685E00B510EF /* AppDelegate.swift */,
 				F9D0AF1B29BE685E00B510EF /* SceneDelegate.swift */,
 				F9D0AF1D29BE685E00B510EF /* ViewController.swift */,
+				3138482329C4A00B0035BCAB /* Figures.swift */,
 				F9D0AF2D29BE703300B510EF /* RectangleBezierView.swift */,
 				F9F98DB629BF913A00BBBCDE /* TriangleBezierView.swift */,
 				F9D0AF1F29BE685E00B510EF /* Main.storyboard */,
@@ -149,6 +152,7 @@
 				F9D0AF1C29BE685E00B510EF /* SceneDelegate.swift in Sources */,
 				F9D0AF2E29BE703300B510EF /* RectangleBezierView.swift in Sources */,
 				F9F98DB729BF913A00BBBCDE /* TriangleBezierView.swift in Sources */,
+				3138482429C4A00B0035BCAB /* Figures.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

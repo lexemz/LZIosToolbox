@@ -19,17 +19,16 @@ class ViewController: UIViewController {
 	}
 
 	private func setupPopUpButton() {
-		popUpButton.menu = UIMenu(children: [
-			UIAction(title: "Nothing") { _ in
-				self.removeView()
-			},
-			UIAction(title: "Rectangle") { _ in
-				self.setView(RectangleBezierView())
-			},
-			UIAction(title: "Tringle") { _ in
-				self.setView(TriangleBezierView())
-			},
-		])
+		let nothingAction = UIAction(title: "Nothing") { _ in
+			self.removeView()
+		}
+		let figureActions = Figure.allCases.map{ figure in
+			UIAction(title: figure.rawValue) { _ in
+				self.setView(figure.view)
+			}
+		}
+
+		popUpButton.menu = UIMenu(children: [nothingAction] + figureActions)
 		popUpButton.showsMenuAsPrimaryAction = true
 	}
 

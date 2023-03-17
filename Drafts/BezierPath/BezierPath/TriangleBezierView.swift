@@ -9,8 +9,6 @@ import UIKit
 
 class TriangleBezierView: UIView {
 
-	var path: UIBezierPath!
-
 	init() {
 		super.init(frame: .zero)
 		backgroundColor = .darkGray
@@ -25,7 +23,7 @@ class TriangleBezierView: UIView {
 	}
 
 	private func createFigure() {
-		path = UIBezierPath()
+		let path = UIBezierPath()
 
 		path.move(to: CGPoint(x: frame.width / 2, y: 0))
 		path.addLine(to: CGPoint(x: 0.0, y: frame.size.height))
