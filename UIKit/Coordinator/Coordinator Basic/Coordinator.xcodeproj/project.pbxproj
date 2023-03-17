@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		310D1E3129C45CBB00C0F337 /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310D1E3029C45CBB00C0F337 /* Collection+Extensions.swift */; };
 		F9545BEA298E73B100121E46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9545BE9298E73B100121E46 /* AppDelegate.swift */; };
 		F9545BEC298E73B100121E46 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9545BEB298E73B100121E46 /* SceneDelegate.swift */; };
 		F9545BEE298E73B100121E46 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9545BED298E73B100121E46 /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		310D1E3029C45CBB00C0F337 /* Collection+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
 		F9545BE6298E73B100121E46 /* Coordinator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coordinator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9545BE9298E73B100121E46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9545BEB298E73B100121E46 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		310D1E2F29C45CA400C0F337 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				310D1E3029C45CBB00C0F337 /* Collection+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		F9545BDD298E73B100121E46 = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +79,7 @@
 				F9545C01298E852200121E46 /* Coordinator.swift */,
 				F9545C06298E875400121E46 /* Protocols */,
 				F9545C05298E86FD00121E46 /* ViewControllers */,
+				310D1E2F29C45CA400C0F337 /* Extensions */,
 				F9545BEF298E73B100121E46 /* Main.storyboard */,
 				F9545BF2298E73B300121E46 /* Assets.xcassets */,
 				F9545BF4298E73B300121E46 /* LaunchScreen.storyboard */,
@@ -171,6 +182,7 @@
 				F9545C02298E852200121E46 /* Coordinator.swift in Sources */,
 				F9545BFE298E75DF00121E46 /* BlueViewController.swift in Sources */,
 				F9545BEC298E73B100121E46 /* SceneDelegate.swift in Sources */,
+				310D1E3129C45CBB00C0F337 /* Collection+Extensions.swift in Sources */,
 				F9545C00298E75E900121E46 /* GreenViewController.swift in Sources */,
 				F9545C04298E861500121E46 /* Storyboarded.swift in Sources */,
 			);

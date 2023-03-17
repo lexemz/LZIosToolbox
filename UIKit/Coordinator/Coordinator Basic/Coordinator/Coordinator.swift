@@ -12,13 +12,16 @@ protocol CoordinatorProtocol: AnyObject {
 	var navigationController: UINavigationController { get set }
 	func start()
 	func showGreenVC()
-	func showBlueVC() 
+	func showBlueVC()
+	func showBlueVCAfterGreenVC()
 }
 
-final class MainCoordinator: CoordinatorProtocol {
+final class MainCoordinator: NSObject, CoordinatorProtocol {
 	var childCoordinators: [CoordinatorProtocol] = []
 
 	var navigationController: UINavigationController
+
+	private var viewControllersPath: [UIViewController] = []
 
 	init(navigationController: UINavigationController) {
 		self.navigationController = navigationController
@@ -27,6 +30,7 @@ final class MainCoordinator: CoordinatorProtocol {
 	func start() {
 		let vc = ViewController.instantiate()
 		vc.coordinator = self
+		navigationController.delegate = self
 		navigationController.pushViewController(vc, animated: false)
 	}
 
@@ -38,5 +42,39 @@ final class MainCoordinator: CoordinatorProtocol {
 	func showBlueVC() {
 		let vc = BlueViewController(coordinator: self)
 		navigationController.pushViewController(vc, animated: true)
+	}
+
+	func showBlueVCAfterGreenVC() {
+		pushViewControllersByPath(
+			viewControllers: [
+				GreenViewController(coordinator: self),
+				BlueViewController(coordinator: self),
+				GreenViewController(coordinator: self)
+			]
+		)
+	}
+}
+
+extension MainCoordinator: UINavigationControllerDelegate {
+
+	func navigationController(
+		_ navigationController: UINavigationController,
+		didShow viewController: UIViewController,
+		animated: Bool
+	) {
+		pathPush()
+	}
+
+	private func pushViewControllersByPath(
+		viewControllers: [UIViewController]
+	) {
+		viewControllersPath = viewControllers
+		pathPush()
+	}
+
+	private func pathPush() {
+		guard let vc = viewControllersPath[safe: 0] else { return }
+		navigationController.pushViewController(vc, animated: true)
+		viewControllersPath.removeFirst()
 	}
 }

@@ -17,10 +17,11 @@ class ViewController: UIViewController, Storyboarded {
 	}
 
 	override func testButtonsPressed(_ sender: UIButton) {
-		if sender.tag == 0 {
-			coordinator?.showBlueVC()
-		} else if sender.tag == 1 {
-			coordinator?.showGreenVC()
+		switch sender.tag {
+		case 0: coordinator?.showBlueVC()
+		case 1: coordinator?.showGreenVC()
+		case 2: coordinator?.showBlueVCAfterGreenVC()
+		default: break
 		}
 	}
 
