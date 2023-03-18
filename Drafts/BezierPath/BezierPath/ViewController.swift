@@ -19,9 +19,10 @@ class ViewController: UIViewController {
 	}
 
 	private func setupPopUpButton() {
-		let nothingAction = UIAction(title: "Nothing") { _ in
+		let nothingAction = UIAction(title: "CLEAR") { _ in
 			self.removeView()
 		}
+		nothingAction.attributes = .destructive
 		let figureActions = Figure.allCases.map{ figure in
 			UIAction(title: figure.rawValue) { _ in
 				self.setView(figure.view)

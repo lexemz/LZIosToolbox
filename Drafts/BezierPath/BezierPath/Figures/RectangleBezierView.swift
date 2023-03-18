@@ -1,13 +1,13 @@
 //
-//  TriangleBezierView.swift
+//  RectangleBezierView.swift
 //  BezierPath
 //
-//  Created by Igor Buzykin on 13.03.2023.
+//  Created by Igor Buzykin on 12.03.2023.
 //
 
 import UIKit
 
-class TriangleBezierView: UIView {
+class RectangleBezierView: UIView {
 
 	init() {
 		super.init(frame: .zero)
@@ -25,15 +25,13 @@ class TriangleBezierView: UIView {
 	private func createFigure() {
 		let path = UIBezierPath()
 
-		path.move(to: CGPoint(x: frame.width / 2, y: 0))
+		path.move(to: .zero)
 		path.addLine(to: CGPoint(x: 0.0, y: frame.size.height))
 		path.addLine(to: CGPoint(x: frame.size.width, y: frame.size.height))
+		path.addLine(to: CGPoint(x: frame.size.width, y: 0.0))
 		path.close()
 
-		UIColor.orange.setFill()
-		path.fill()
-
-		UIColor.cyan.setStroke()
-		path.stroke()
+		path.fillAndStroke()
 	}
 }
+
