@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3138482429C4A00B0035BCAB /* Figures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3138482329C4A00B0035BCAB /* Figures.swift */; };
+		31FF100029C89B9B001C1395 /* RectangleShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FF0FFF29C89B9B001C1395 /* RectangleShape.swift */; };
 		F970B13129C4C88D001B2DF6 /* OvalBezierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F970B13029C4C88D001B2DF6 /* OvalBezierView.swift */; };
 		F970B13329C4C9C1001B2DF6 /* CircleBezierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F970B13229C4C9C1001B2DF6 /* CircleBezierView.swift */; };
 		F9D0AF1A29BE685E00B510EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D0AF1929BE685E00B510EF /* AppDelegate.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		3138482329C4A00B0035BCAB /* Figures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Figures.swift; sourceTree = "<group>"; };
+		31FF0FFF29C89B9B001C1395 /* RectangleShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleShape.swift; sourceTree = "<group>"; };
 		F970B13029C4C88D001B2DF6 /* OvalBezierView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvalBezierView.swift; sourceTree = "<group>"; };
 		F970B13229C4C9C1001B2DF6 /* CircleBezierView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleBezierView.swift; sourceTree = "<group>"; };
 		F9D0AF1629BE685E00B510EF /* BezierPath.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BezierPath.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +103,7 @@
 				F9ECBB4629C4DA0D001B892E /* RectangleWithHalfRoundedCorners.swift */,
 				F9ECBB4A29C641B1001B892E /* ArcShape.swift */,
 				F9ECBB4C29C7629E001B892E /* LeftArcOfCircle.swift */,
+				31FF0FFF29C89B9B001C1395 /* RectangleShape.swift */,
 			);
 			path = Figures;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 				F9D0AF2E29BE703300B510EF /* RectangleBezierView.swift in Sources */,
 				F9F98DB729BF913A00BBBCDE /* TriangleBezierView.swift in Sources */,
 				F9ECBB4D29C7629E001B892E /* LeftArcOfCircle.swift in Sources */,
+				31FF100029C89B9B001C1395 /* RectangleShape.swift in Sources */,
 				3138482429C4A00B0035BCAB /* Figures.swift in Sources */,
 				F970B13329C4C9C1001B2DF6 /* CircleBezierView.swift in Sources */,
 			);

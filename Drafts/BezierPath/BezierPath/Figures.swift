@@ -17,6 +17,8 @@ enum Figure: String, CaseIterable {
 	case arcShape
 	case leftArcOfCircle
 
+	case rectangleShape
+
 	var view: UIView {
 		switch self {
 		case .rectangle: return RectangleBezierView()
@@ -27,6 +29,8 @@ enum Figure: String, CaseIterable {
 		case .rectangleWithHalfRoundedCorners: return RectangleWithHalfRoundedCorners()
 		case .arcShape: return ArcShape()
 		case .leftArcOfCircle: return LeftArcOfCircle()
+
+		case .rectangleShape: return RectangleShape()
 		}
 	}
 }
