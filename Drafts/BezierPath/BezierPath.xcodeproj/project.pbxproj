@@ -12,6 +12,7 @@
 		F970B13129C4C88D001B2DF6 /* OvalBezierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F970B13029C4C88D001B2DF6 /* OvalBezierView.swift */; };
 		F970B13329C4C9C1001B2DF6 /* CircleBezierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F970B13229C4C9C1001B2DF6 /* CircleBezierView.swift */; };
 		F9A8857629CF98DB000DA524 /* TriangleMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A8857529CF98DA000DA524 /* TriangleMask.swift */; };
+		F9A8857829D0DCBA000DA524 /* TwoShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A8857729D0DCBA000DA524 /* TwoShapes.swift */; };
 		F9D0AF1A29BE685E00B510EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D0AF1929BE685E00B510EF /* AppDelegate.swift */; };
 		F9D0AF1C29BE685E00B510EF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D0AF1B29BE685E00B510EF /* SceneDelegate.swift */; };
 		F9D0AF1E29BE685E00B510EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D0AF1D29BE685E00B510EF /* ViewController.swift */; };
@@ -33,6 +34,7 @@
 		F970B13029C4C88D001B2DF6 /* OvalBezierView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvalBezierView.swift; sourceTree = "<group>"; };
 		F970B13229C4C9C1001B2DF6 /* CircleBezierView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleBezierView.swift; sourceTree = "<group>"; };
 		F9A8857529CF98DA000DA524 /* TriangleMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleMask.swift; sourceTree = "<group>"; };
+		F9A8857729D0DCBA000DA524 /* TwoShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoShapes.swift; sourceTree = "<group>"; };
 		F9D0AF1629BE685E00B510EF /* BezierPath.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BezierPath.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9D0AF1929BE685E00B510EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9D0AF1B29BE685E00B510EF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				F9ECBB4C29C7629E001B892E /* LeftArcOfCircle.swift */,
 				31FF0FFF29C89B9B001C1395 /* RectangleShape.swift */,
 				F9A8857529CF98DA000DA524 /* TriangleMask.swift */,
+				F9A8857729D0DCBA000DA524 /* TwoShapes.swift */,
 			);
 			path = Figures;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 				F9D0AF1A29BE685E00B510EF /* AppDelegate.swift in Sources */,
 				F9D0AF1C29BE685E00B510EF /* SceneDelegate.swift in Sources */,
 				F9ECBB4729C4DA0D001B892E /* RectangleWithHalfRoundedCorners.swift in Sources */,
+				F9A8857829D0DCBA000DA524 /* TwoShapes.swift in Sources */,
 				F9D0AF2E29BE703300B510EF /* RectangleBezierView.swift in Sources */,
 				F9F98DB729BF913A00BBBCDE /* TriangleBezierView.swift in Sources */,
 				F9A8857629CF98DB000DA524 /* TriangleMask.swift in Sources */,
