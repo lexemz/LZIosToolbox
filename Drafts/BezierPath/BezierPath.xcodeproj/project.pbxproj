@@ -11,6 +11,7 @@
 		31FF100029C89B9B001C1395 /* RectangleShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FF0FFF29C89B9B001C1395 /* RectangleShape.swift */; };
 		F970B13129C4C88D001B2DF6 /* OvalBezierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F970B13029C4C88D001B2DF6 /* OvalBezierView.swift */; };
 		F970B13329C4C9C1001B2DF6 /* CircleBezierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F970B13229C4C9C1001B2DF6 /* CircleBezierView.swift */; };
+		F97370E429E343100081157A /* TwoShapesWithBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97370E329E343100081157A /* TwoShapesWithBounds.swift */; };
 		F9A8857629CF98DB000DA524 /* TriangleMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A8857529CF98DA000DA524 /* TriangleMask.swift */; };
 		F9A8857829D0DCBA000DA524 /* TwoShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A8857729D0DCBA000DA524 /* TwoShapes.swift */; };
 		F9D0AF1A29BE685E00B510EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D0AF1929BE685E00B510EF /* AppDelegate.swift */; };
@@ -20,6 +21,7 @@
 		F9D0AF2329BE685F00B510EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9D0AF2229BE685F00B510EF /* Assets.xcassets */; };
 		F9D0AF2629BE685F00B510EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9D0AF2429BE685F00B510EF /* LaunchScreen.storyboard */; };
 		F9D0AF2E29BE703300B510EF /* RectangleBezierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D0AF2D29BE703300B510EF /* RectangleBezierView.swift */; };
+		F9D34D8129E35506006FCCAE /* ComplexShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D34D8029E35506006FCCAE /* ComplexShape.swift */; };
 		F9ECBB4429C4D69D001B892E /* RectangleWithRoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ECBB4329C4D69D001B892E /* RectangleWithRoundedCorners.swift */; };
 		F9ECBB4729C4DA0D001B892E /* RectangleWithHalfRoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ECBB4629C4DA0D001B892E /* RectangleWithHalfRoundedCorners.swift */; };
 		F9ECBB4929C63B29001B892E /* UIBezierPath+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ECBB4829C63B29001B892E /* UIBezierPath+Extensions.swift */; };
@@ -33,6 +35,7 @@
 		31FF0FFF29C89B9B001C1395 /* RectangleShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleShape.swift; sourceTree = "<group>"; };
 		F970B13029C4C88D001B2DF6 /* OvalBezierView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvalBezierView.swift; sourceTree = "<group>"; };
 		F970B13229C4C9C1001B2DF6 /* CircleBezierView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleBezierView.swift; sourceTree = "<group>"; };
+		F97370E329E343100081157A /* TwoShapesWithBounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoShapesWithBounds.swift; sourceTree = "<group>"; };
 		F9A8857529CF98DA000DA524 /* TriangleMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleMask.swift; sourceTree = "<group>"; };
 		F9A8857729D0DCBA000DA524 /* TwoShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoShapes.swift; sourceTree = "<group>"; };
 		F9D0AF1629BE685E00B510EF /* BezierPath.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BezierPath.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +47,7 @@
 		F9D0AF2529BE685F00B510EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F9D0AF2729BE685F00B510EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9D0AF2D29BE703300B510EF /* RectangleBezierView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleBezierView.swift; sourceTree = "<group>"; };
+		F9D34D8029E35506006FCCAE /* ComplexShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexShape.swift; sourceTree = "<group>"; };
 		F9ECBB4329C4D69D001B892E /* RectangleWithRoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleWithRoundedCorners.swift; sourceTree = "<group>"; };
 		F9ECBB4629C4DA0D001B892E /* RectangleWithHalfRoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleWithHalfRoundedCorners.swift; sourceTree = "<group>"; };
 		F9ECBB4829C63B29001B892E /* UIBezierPath+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBezierPath+Extensions.swift"; sourceTree = "<group>"; };
@@ -110,6 +114,8 @@
 				31FF0FFF29C89B9B001C1395 /* RectangleShape.swift */,
 				F9A8857529CF98DA000DA524 /* TriangleMask.swift */,
 				F9A8857729D0DCBA000DA524 /* TwoShapes.swift */,
+				F97370E329E343100081157A /* TwoShapesWithBounds.swift */,
+				F9D34D8029E35506006FCCAE /* ComplexShape.swift */,
 			);
 			path = Figures;
 			sourceTree = "<group>";
@@ -189,6 +195,7 @@
 				F9D0AF1E29BE685E00B510EF /* ViewController.swift in Sources */,
 				F970B13129C4C88D001B2DF6 /* OvalBezierView.swift in Sources */,
 				F9ECBB4929C63B29001B892E /* UIBezierPath+Extensions.swift in Sources */,
+				F9D34D8129E35506006FCCAE /* ComplexShape.swift in Sources */,
 				F9ECBB4B29C641B1001B892E /* ArcShape.swift in Sources */,
 				F9D0AF1A29BE685E00B510EF /* AppDelegate.swift in Sources */,
 				F9D0AF1C29BE685E00B510EF /* SceneDelegate.swift in Sources */,
@@ -196,6 +203,7 @@
 				F9A8857829D0DCBA000DA524 /* TwoShapes.swift in Sources */,
 				F9D0AF2E29BE703300B510EF /* RectangleBezierView.swift in Sources */,
 				F9F98DB729BF913A00BBBCDE /* TriangleBezierView.swift in Sources */,
+				F97370E429E343100081157A /* TwoShapesWithBounds.swift in Sources */,
 				F9A8857629CF98DB000DA524 /* TriangleMask.swift in Sources */,
 				F9ECBB4D29C7629E001B892E /* LeftArcOfCircle.swift in Sources */,
 				31FF100029C89B9B001C1395 /* RectangleShape.swift in Sources */,

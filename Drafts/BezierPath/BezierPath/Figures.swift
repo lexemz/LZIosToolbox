@@ -19,6 +19,8 @@ enum Figure: String, CaseIterable {
 	case rectangleShape
 	case triangleMask
 	case twoShapes
+	case twoShapesWithBounds
+	case complexShape
 
 	var view: UIView {
 		switch self {
@@ -33,6 +35,8 @@ enum Figure: String, CaseIterable {
 		case .rectangleShape: return RectangleShape()
 		case .triangleMask: return TriangleMask()
 		case .twoShapes: return TwoShapes()
+		case .twoShapesWithBounds: return TwoShapesWithBounds()
+		case .complexShape: return ComplexShape()
 		}
 	}
 }
