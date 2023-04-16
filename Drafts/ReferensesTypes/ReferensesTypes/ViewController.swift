@@ -41,10 +41,10 @@ class ViewController: UIViewController {
 	}
 
 	@IBAction func weakWeakTap(_ sender: Any) {
-		asyncWorker.execute() { [weak self] in
+		asyncWorker.execute(tag: "#1") { [weak self] in
 
 			// Из-за того, что захват слабый и нет повышения, утечки не будет
-			self?.asyncWorker.execute {
+			self?.asyncWorker.execute(tag: "#2") {
 				self?.value += 1
 			}
 		}
