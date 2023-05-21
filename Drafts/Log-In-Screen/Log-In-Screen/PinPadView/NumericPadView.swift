@@ -7,13 +7,21 @@
 
 import UIKit
 
+protocol NumericPadViewDelegate: AnyObject {
+	func numericPad(_ numericPad: NumericPadView, didTapAt num: Int)
+}
+
 final class NumericPadView: UIView {
 
-	private var pin: String = "" {
-		didSet {
-			print(pin.isEmpty ? "пусто" : pin)
-		}
+	weak var delegate: NumericPadViewDelegate?
+
+	private enum Constants {
+		static let horizontalSpacing: CGFloat = 10
+		static let verticalSpacing: CGFloat = 5
 	}
+
+	private lazy var leftAccessoryContainer = UIView()
+	private lazy var rightAccessoryContainer = UIView()
 
 	private lazy var mainStack: UIStackView = {
 		let rows = [
@@ -25,23 +33,14 @@ final class NumericPadView: UIView {
 		let stackView = UIStackView(arrangedSubviews: rows)
 		stackView.axis = .vertical
 		stackView.distribution = .fillEqually
-		stackView.spacing = 10
+		stackView.spacing = Constants.verticalSpacing
 		stackView.translatesAutoresizingMaskIntoConstraints = false
+		addSubview(stackView)
 		return stackView
-	}()
-
-	private lazy var functionButton: UIButton = {
-		let button = UIButton()
-		button.translatesAutoresizingMaskIntoConstraints = false
-		button.addTarget(self, action: #selector(functionButtonTap), for: .touchUpInside)
-		button.tintColor = .white
-		button.setImage(Images.faceID.image, for: .normal)
-		return button
 	}()
 
 	init() {
 		super.init(frame: .zero)
-		setupUI()
 		setupConstraints()
 	}
 
@@ -50,49 +49,56 @@ final class NumericPadView: UIView {
 	}
 }
 
-private extension NumericPadView {
-	func setupUI() {
-		addSubview(mainStack)
+// MARK: - Internal
+
+extension NumericPadView {
+	func setLeftAccessoryView(_ view: UIView) {
+		view.translatesAutoresizingMaskIntoConstraints = false
+		leftAccessoryContainer.addSubview(view)
+		let constraints = [
+			view.topAnchor.constraint(equalTo: leftAccessoryContainer.topAnchor),
+			view.leadingAnchor.constraint(equalTo: leftAccessoryContainer.leadingAnchor),
+			view.trailingAnchor.constraint(equalTo: leftAccessoryContainer.trailingAnchor),
+			view.bottomAnchor.constraint(equalTo: leftAccessoryContainer.bottomAnchor)
+		]
+		NSLayoutConstraint.activate(constraints)
 	}
 
+	func setRightAccessoryView(_ view: UIView) {
+		view.translatesAutoresizingMaskIntoConstraints = false
+		rightAccessoryContainer.addSubview(view)
+		let constraints = [
+			view.topAnchor.constraint(equalTo: rightAccessoryContainer.topAnchor),
+			view.leadingAnchor.constraint(equalTo: rightAccessoryContainer.leadingAnchor),
+			view.trailingAnchor.constraint(equalTo: rightAccessoryContainer.trailingAnchor),
+			view.bottomAnchor.constraint(equalTo: rightAccessoryContainer.bottomAnchor)
+		]
+		NSLayoutConstraint.activate(constraints)
+	}
+}
+
+// MARK: - Private
+
+private extension NumericPadView {
 	func setupConstraints() {
 		let constraints = [
 			mainStack.topAnchor.constraint(equalTo: topAnchor),
 			mainStack.leadingAnchor.constraint(equalTo: leadingAnchor),
 			mainStack.trailingAnchor.constraint(equalTo: trailingAnchor),
-			mainStack.bottomAnchor.constraint(equalTo: bottomAnchor)
+			mainStack.bottomAnchor.constraint(equalTo: bottomAnchor),
+			leftAccessoryContainer.heightAnchor.constraint(equalTo: leftAccessoryContainer.widthAnchor,
+														   multiplier: 1.0 / 1.0)
 		]
 		NSLayoutConstraint.activate(constraints)
 	}
 
 	@objc
 	func numericButtonTap(sender: UIButton) {
-		pin += String(sender.tag)
-		chageFuncButtonImage(.deleteBackward)
-	}
-
-	@objc
-	func functionButtonTap() {
-		if pin.isEmpty {
-			handleFaceIDCall()
-		} else {
-			pin.removeLast()
-			if pin.isEmpty {
-				chageFuncButtonImage(.faceID)
-			}
-		}
-	}
-
-	func handleFaceIDCall() {
-		print(#function)
-	}
-
-	func chageFuncButtonImage(_ image: Images) {
-		functionButton.setImage(image.image, for: .normal)
+		delegate?.numericPad(self, didTapAt: sender.tag)
 	}
 }
 
-// MARK: - Private methods
+// MARK: - Subviews creation flow
 
 private extension NumericPadView {
 	func createFirstRow() -> UIStackView {
@@ -124,9 +130,9 @@ private extension NumericPadView {
 
 	func createFourthRow() -> UIStackView {
 		let views = [
-			UIView(),
+			leftAccessoryContainer,
 			createNumericButton(num: 0),
-			functionButton
+			rightAccessoryContainer
 		]
 		return createRowStackView(subviews: views)
 	}
@@ -134,15 +140,11 @@ private extension NumericPadView {
 	func createNumericButton(num: Int) -> UIButton {
 		let button = UIButton()
 		button.setTitle(String(num), for: .normal)
-		button.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+		button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 30)
+		button.setTitleColor(.label, for: .normal)
 		button.tag = num
 		button.translatesAutoresizingMaskIntoConstraints = false
 		button.addTarget(self, action: #selector(numericButtonTap(sender:)), for: .touchUpInside)
-		if num == 1 {
-			NSLayoutConstraint.activate([
-				button.heightAnchor.constraint(equalTo: button.widthAnchor, multiplier: 1.0 / 1.0)
-			])
-		}
 		return button
 	}
 
@@ -151,29 +153,7 @@ private extension NumericPadView {
 		stackView.axis = .horizontal
 		stackView.alignment = .fill
 		stackView.distribution = .fillEqually
-		stackView.spacing = 10
+		stackView.spacing = Constants.horizontalSpacing
 		return stackView
-	}
-}
-
-// MARK: - Images
-
-private extension NumericPadView {
-	enum Images {
-		case faceID
-		case deleteBackward
-
-		var image: UIImage {
-			var image: UIImage?
-			switch self {
-			case .faceID:
-				let imageConfiguration = UIImage.SymbolConfiguration(pointSize: 30)
-				image = UIImage(systemName: "faceid", withConfiguration: imageConfiguration)
-			case .deleteBackward:
-				let imageConfiguration = UIImage.SymbolConfiguration(pointSize: 20)
-				image = UIImage(systemName: "delete.backward", withConfiguration: imageConfiguration)
-			}
-			return image ?? UIImage()
-		}
 	}
 }

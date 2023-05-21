@@ -13,6 +13,8 @@
 		F90058232A13699D00F8FED7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F90058222A13699D00F8FED7 /* Assets.xcassets */; };
 		F90058262A13699D00F8FED7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F90058242A13699D00F8FED7 /* LaunchScreen.storyboard */; };
 		F900582E2A136C8800F8FED7 /* NumericPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F900582D2A136C8800F8FED7 /* NumericPadView.swift */; };
+		F9AB918D2A1A9FF00054D564 /* PinPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AB918C2A1A9FF00054D564 /* PinPadView.swift */; };
+		F9AB91902A1AA3730054D564 /* DotIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AB918F2A1AA3730054D564 /* DotIndicatorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		F90058252A13699D00F8FED7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F90058272A13699D00F8FED7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F900582D2A136C8800F8FED7 /* NumericPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericPadView.swift; sourceTree = "<group>"; };
+		F9AB918C2A1A9FF00054D564 /* PinPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinPadView.swift; sourceTree = "<group>"; };
+		F9AB918F2A1AA3730054D564 /* DotIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotIndicatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,12 +63,22 @@
 				F90058192A13699B00F8FED7 /* AppDelegate.swift */,
 				F900581B2A13699B00F8FED7 /* SceneDelegate.swift */,
 				F900581D2A13699B00F8FED7 /* ViewController.swift */,
-				F900582D2A136C8800F8FED7 /* NumericPadView.swift */,
+				F9AB918E2A1AA3580054D564 /* PinPadView */,
 				F90058222A13699D00F8FED7 /* Assets.xcassets */,
 				F90058242A13699D00F8FED7 /* LaunchScreen.storyboard */,
 				F90058272A13699D00F8FED7 /* Info.plist */,
 			);
 			path = "Log-In-Screen";
+			sourceTree = "<group>";
+		};
+		F9AB918E2A1AA3580054D564 /* PinPadView */ = {
+			isa = PBXGroup;
+			children = (
+				F9AB918C2A1A9FF00054D564 /* PinPadView.swift */,
+				F9AB918F2A1AA3730054D564 /* DotIndicatorView.swift */,
+				F900582D2A136C8800F8FED7 /* NumericPadView.swift */,
+			);
+			path = PinPadView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +153,10 @@
 			files = (
 				F900581E2A13699B00F8FED7 /* ViewController.swift in Sources */,
 				F900581A2A13699B00F8FED7 /* AppDelegate.swift in Sources */,
+				F9AB91902A1AA3730054D564 /* DotIndicatorView.swift in Sources */,
 				F900582E2A136C8800F8FED7 /* NumericPadView.swift in Sources */,
 				F900581C2A13699B00F8FED7 /* SceneDelegate.swift in Sources */,
+				F9AB918D2A1A9FF00054D564 /* PinPadView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

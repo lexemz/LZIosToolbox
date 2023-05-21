@@ -9,10 +9,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
-	private lazy var numericPadView: NumericPadView = {
-		let numericPad = NumericPadView()
-		numericPad.translatesAutoresizingMaskIntoConstraints = false
-		return numericPad
+	private lazy var pinPadView: PinPadView = {
+		let pinPad = PinPadView()
+		pinPad.translatesAutoresizingMaskIntoConstraints = false
+		return pinPad
 	}()
 
 	override func viewDidLoad() {
@@ -28,17 +28,17 @@ class ViewController: UIViewController {
 
 private extension ViewController {
 	func setupUI() {
-		view.addSubview(numericPadView)
+		view.addSubview(pinPadView)
 	}
 
 	func setupConstraints() {
 		let insets: CGFloat = 65
 
 		let constraints = [
-			numericPadView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-			numericPadView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-			numericPadView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: insets),
-			numericPadView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -insets),
+			pinPadView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+			pinPadView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
+			pinPadView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: insets),
+			pinPadView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -insets),
 		]
 
 		NSLayoutConstraint.activate(constraints)
