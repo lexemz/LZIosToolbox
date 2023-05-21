@@ -35,12 +35,12 @@ final class NumericPadView: UIView {
 		stackView.distribution = .fillEqually
 		stackView.spacing = Constants.verticalSpacing
 		stackView.translatesAutoresizingMaskIntoConstraints = false
-		addSubview(stackView)
 		return stackView
 	}()
 
 	init() {
 		super.init(frame: .zero)
+		setupUI()
 		setupConstraints()
 	}
 
@@ -80,6 +80,10 @@ extension NumericPadView {
 // MARK: - Private
 
 private extension NumericPadView {
+	func setupUI() {
+		addSubview(mainStack)
+	}
+
 	func setupConstraints() {
 		let constraints = [
 			mainStack.topAnchor.constraint(equalTo: topAnchor),
