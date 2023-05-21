@@ -29,12 +29,10 @@ class ViewController: UIViewController {
 private extension ViewController {
 	func setupUI() {
 		view.addSubview(numericPadView)
-
-		numericPadView.backgroundColor = .red
 	}
 
 	func setupConstraints() {
-		let insets: CGFloat = 40
+		let insets: CGFloat = 65
 
 		let constraints = [
 			numericPadView.centerXAnchor.constraint(equalTo: view.centerXAnchor),

@@ -9,6 +9,12 @@ import UIKit
 
 final class NumericPadView: UIView {
 
+	private var pin: String = "" {
+		didSet {
+			print(pin.isEmpty ? "пусто" : pin)
+		}
+	}
+
 	private lazy var mainStack: UIStackView = {
 		let rows = [
 			createFirstRow(),
@@ -24,11 +30,12 @@ final class NumericPadView: UIView {
 		return stackView
 	}()
 
-	private lazy var cleanButton: UIButton = {
+	private lazy var functionButton: UIButton = {
 		let button = UIButton()
 		button.translatesAutoresizingMaskIntoConstraints = false
-		button.addTarget(self, action: #selector(clearButtonTap), for: .touchUpInside)
-		button.backgroundColor = .gray
+		button.addTarget(self, action: #selector(functionButtonTap), for: .touchUpInside)
+		button.tintColor = .white
+		button.setImage(Images.faceID.image, for: .normal)
 		return button
 	}()
 
@@ -49,7 +56,7 @@ private extension NumericPadView {
 	}
 
 	func setupConstraints() {
-		var constraints = [
+		let constraints = [
 			mainStack.topAnchor.constraint(equalTo: topAnchor),
 			mainStack.leadingAnchor.constraint(equalTo: leadingAnchor),
 			mainStack.trailingAnchor.constraint(equalTo: trailingAnchor),
@@ -60,16 +67,32 @@ private extension NumericPadView {
 
 	@objc
 	func numericButtonTap(sender: UIButton) {
-		print(sender.tag)
+		pin += String(sender.tag)
+		chageFuncButtonImage(.deleteBackward)
 	}
 
 	@objc
-	func clearButtonTap() {
-		print("Clear tap")
+	func functionButtonTap() {
+		if pin.isEmpty {
+			handleFaceIDCall()
+		} else {
+			pin.removeLast()
+			if pin.isEmpty {
+				chageFuncButtonImage(.faceID)
+			}
+		}
+	}
+
+	func handleFaceIDCall() {
+		print(#function)
+	}
+
+	func chageFuncButtonImage(_ image: Images) {
+		functionButton.setImage(image.image, for: .normal)
 	}
 }
 
-// MARK: - Private
+// MARK: - Private methods
 
 private extension NumericPadView {
 	func createFirstRow() -> UIStackView {
@@ -103,7 +126,7 @@ private extension NumericPadView {
 		let views = [
 			UIView(),
 			createNumericButton(num: 0),
-			cleanButton
+			functionButton
 		]
 		return createRowStackView(subviews: views)
 	}
@@ -111,11 +134,10 @@ private extension NumericPadView {
 	func createNumericButton(num: Int) -> UIButton {
 		let button = UIButton()
 		button.setTitle(String(num), for: .normal)
+		button.titleLabel?.font = UIFont.systemFont(ofSize: 30)
 		button.tag = num
 		button.translatesAutoresizingMaskIntoConstraints = false
 		button.addTarget(self, action: #selector(numericButtonTap(sender:)), for: .touchUpInside)
-		button.backgroundColor = .gray
-
 		if num == 1 {
 			NSLayoutConstraint.activate([
 				button.heightAnchor.constraint(equalTo: button.widthAnchor, multiplier: 1.0 / 1.0)
@@ -131,5 +153,27 @@ private extension NumericPadView {
 		stackView.distribution = .fillEqually
 		stackView.spacing = 10
 		return stackView
+	}
+}
+
+// MARK: - Images
+
+private extension NumericPadView {
+	enum Images {
+		case faceID
+		case deleteBackward
+
+		var image: UIImage {
+			var image: UIImage?
+			switch self {
+			case .faceID:
+				let imageConfiguration = UIImage.SymbolConfiguration(pointSize: 30)
+				image = UIImage(systemName: "faceid", withConfiguration: imageConfiguration)
+			case .deleteBackward:
+				let imageConfiguration = UIImage.SymbolConfiguration(pointSize: 20)
+				image = UIImage(systemName: "delete.backward", withConfiguration: imageConfiguration)
+			}
+			return image ?? UIImage()
+		}
 	}
 }
