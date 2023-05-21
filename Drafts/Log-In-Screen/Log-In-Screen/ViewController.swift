@@ -34,13 +34,13 @@ private extension ViewController {
 	}
 
 	func setupConstraints() {
-		let insets: CGFloat = 20
+		let insets: CGFloat = 40
 
 		let constraints = [
-			numericPadView.topAnchor.constraint(equalTo: view.topAnchor, constant: view.frame.height / 2),
-			numericPadView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: insets),
-			numericPadView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -insets),
-			numericPadView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+			numericPadView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+			numericPadView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+			numericPadView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: insets),
+			numericPadView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -insets),
 		]
 
 		NSLayoutConstraint.activate(constraints)
