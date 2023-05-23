@@ -149,6 +149,7 @@ private extension NumericPadView {
 		button.tag = num
 		button.translatesAutoresizingMaskIntoConstraints = false
 		button.addTarget(self, action: #selector(numericButtonTap(sender:)), for: .touchUpInside)
+		button.isExclusiveTouch = true
 		return button
 	}
 

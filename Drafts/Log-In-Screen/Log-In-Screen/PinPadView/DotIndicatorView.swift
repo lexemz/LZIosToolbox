@@ -54,10 +54,11 @@ extension DotIndicatorView {
 		guard activeDotsCount < dots.count else { return }
 		dots[activeDotsCount].chageColor(.systemBlue)
 		if activeDotsCount == dots.count - 1 {
-			delegate?.indicatorViewDidFilled(self)
 			isFill = true
+			delegate?.indicatorViewDidFilled(self)
 		}
-		activeDotsCount += 1	}
+		activeDotsCount += 1
+	}
 
 	func deactivatePreviousDot() {
 		if isFill { resetStatus() }
@@ -68,19 +69,17 @@ extension DotIndicatorView {
 
 	func showError() {
 		dots.forEach { $0.chageColor(.systemRed) }
-		HapticHandler.notification(type: .error).impact()
 		dotsStackView.shake()
 	}
 
 	func showSuccess() {
 		dots.forEach { $0.chageColor(.systemGreen) }
-		HapticHandler.notification(type: .success).impact()
 	}
 
 	func resetStatus() {
+		activeDotsCount = 0
 		dots.forEach { $0.chageColor(.systemGray3) }
 		isFill = false
-		activeDotsCount = 0
 	}
 }
 
@@ -123,7 +122,7 @@ fileprivate extension UIView {
 	}
 
 	func chageColor(_ color: UIColor) {
-		UIView.animate(withDuration: 0.15) {
+		UIView.animate(withDuration: 0.1) {
 			self.backgroundColor = color
 		}
 	}

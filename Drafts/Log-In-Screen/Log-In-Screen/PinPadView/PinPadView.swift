@@ -10,7 +10,9 @@ import UIKit
 final class PinPadView: UIView {
 
 	private let pin = "111222"
-	private var currentPin = ""
+	private var currentPin = "" {
+		didSet { print(currentPin) }
+	}
 
 	private lazy var rightAdditionalButton: UIButton = {
 		let button = UIButton()
@@ -56,12 +58,16 @@ extension PinPadView: NumericPadViewDelegate {
 extension PinPadView: DotIndicatorViewDelegate {
 
 	func indicatorViewDidFilled(_ indicatorView: DotIndicatorView) {
-		if pin == currentPin {
-			dotIndicatorView.showSuccess()
-		} else {
-			dotIndicatorView.showError()
+		numericPadView.isUserInteractionEnabled = false
+		DispatchQueue.main.delay(0.3) { [self] in
+			if pin == currentPin {
+				handleCorrectPin()
+			} else {
+				handleIncorrectPin()
+			}
+			currentPin = ""
+			numericPadView.isUserInteractionEnabled = true
 		}
-		currentPin = ""
 	}
 }
 
@@ -91,5 +97,15 @@ private extension PinPadView {
 			dotIndicatorView.bottomAnchor.constraint(equalTo: numericPadView.topAnchor, constant: -30)
 		]
 		NSLayoutConstraint.activate(constraints)
+	}
+
+	func handleCorrectPin() {
+		dotIndicatorView.showSuccess()
+		HapticHandler.notification(type: .success).impact()
+	}
+
+	func handleIncorrectPin() {
+		dotIndicatorView.showError()
+		HapticHandler.notification(type: .error).impact()
 	}
 }

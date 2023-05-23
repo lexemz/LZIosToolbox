@@ -16,6 +16,7 @@
 		F9AB918D2A1A9FF00054D564 /* PinPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AB918C2A1A9FF00054D564 /* PinPadView.swift */; };
 		F9AB91902A1AA3730054D564 /* DotIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AB918F2A1AA3730054D564 /* DotIndicatorView.swift */; };
 		F9AB91922A1BE1F90054D564 /* HapticHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AB91912A1BE1F90054D564 /* HapticHandler.swift */; };
+		F9CA84AB2A1D32F800A35769 /* DispatchQueue+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CA84AA2A1D32F800A35769 /* DispatchQueue+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		F9AB918C2A1A9FF00054D564 /* PinPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinPadView.swift; sourceTree = "<group>"; };
 		F9AB918F2A1AA3730054D564 /* DotIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotIndicatorView.swift; sourceTree = "<group>"; };
 		F9AB91912A1BE1F90054D564 /* HapticHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticHandler.swift; sourceTree = "<group>"; };
+		F9CA84AA2A1D32F800A35769 /* DispatchQueue+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				F90058222A13699D00F8FED7 /* Assets.xcassets */,
 				F90058242A13699D00F8FED7 /* LaunchScreen.storyboard */,
 				F90058272A13699D00F8FED7 /* Info.plist */,
+				F9CA84AA2A1D32F800A35769 /* DispatchQueue+Extensions.swift */,
 			);
 			path = "Log-In-Screen";
 			sourceTree = "<group>";
@@ -155,6 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F900581E2A13699B00F8FED7 /* ViewController.swift in Sources */,
+				F9CA84AB2A1D32F800A35769 /* DispatchQueue+Extensions.swift in Sources */,
 				F9AB91922A1BE1F90054D564 /* HapticHandler.swift in Sources */,
 				F900581A2A13699B00F8FED7 /* AppDelegate.swift in Sources */,
 				F9AB91902A1AA3730054D564 /* DotIndicatorView.swift in Sources */,
