@@ -9,6 +9,17 @@ import UIKit
 
 final class PinPadView: UIView {
 
+	private let pin = "111222"
+	private var currentPin = ""
+
+	private lazy var rightAdditionalButton: UIButton = {
+		let button = UIButton()
+		button.setImage(UIImage(systemName: "delete.backward.fill"), for: .normal)
+		button.addTarget(self, action: #selector(rightButtonDidTap), for: .touchUpInside)
+		button.tintColor = .label
+		return button
+	}()
+
 	private lazy var numericPadView: NumericPadView = {
 		let numPadView = NumericPadView()
 		numPadView.delegate = self
@@ -36,29 +47,37 @@ final class PinPadView: UIView {
 
 extension PinPadView: NumericPadViewDelegate {
 	func numericPad(_ numericPad: NumericPadView, didTapAt num: Int) {
-//		print(#function, num)
-
-		if num == 1 {
-			dotIndicatorView.activateNextDot()
-		}
-		if num == 2 {
-			dotIndicatorView.deactivatePreviousDot()
-		}
-		if num == 3 {
-			dotIndicatorView.showError()
-		}
+		HapticHandler.feedback(style: .medium).impact()
+		currentPin += String(num)
+		dotIndicatorView.activateNextDot()
 	}
 }
 
 extension PinPadView: DotIndicatorViewDelegate {
+
 	func indicatorViewDidFilled(_ indicatorView: DotIndicatorView) {
-		print(#function)
+		if pin == currentPin {
+			dotIndicatorView.showSuccess()
+		} else {
+			dotIndicatorView.showError()
+		}
+		currentPin = ""
 	}
 }
 
 private extension PinPadView {
+
+	@objc
+	func rightButtonDidTap() {
+		if dotIndicatorView.isFill { dotIndicatorView.resetStatus() }
+		guard !currentPin.isEmpty else { return }
+		currentPin.removeLast()
+		dotIndicatorView.deactivatePreviousDot()
+	}
+
 	func setupUI() {
 		[dotIndicatorView, numericPadView].forEach(addSubview(_:))
+		numericPadView.setRightAccessoryView(rightAdditionalButton)
 	}
 
 	func setupConstraints() {

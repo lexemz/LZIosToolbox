@@ -22,7 +22,7 @@ final class DotIndicatorView: UIView {
 	private var dots: [UIView] = []
 
 	private var activeDotsCount = 0
-	private var errorState = false
+	private(set) var isFill = false
 
 	private lazy var dotsStackView: UIStackView = {
 		let stackView = UIStackView(arrangedSubviews: dots)
@@ -50,37 +50,43 @@ final class DotIndicatorView: UIView {
 extension DotIndicatorView {
 
 	func activateNextDot() {
-		if errorState { deactivateErrorState() }
+		if isFill { resetStatus() }
 		guard activeDotsCount < dots.count else { return }
 		dots[activeDotsCount].chageColor(.systemBlue)
-		if activeDotsCount == dots.count - 1 { delegate?.indicatorViewDidFilled(self) }
-		activeDotsCount += 1
-	}
+		if activeDotsCount == dots.count - 1 {
+			delegate?.indicatorViewDidFilled(self)
+			isFill = true
+		}
+		activeDotsCount += 1	}
 
 	func deactivatePreviousDot() {
-		if errorState { deactivateErrorState() }
+		if isFill { resetStatus() }
 		guard activeDotsCount > 0 else { return }
 		activeDotsCount -= 1
 		dots[activeDotsCount].chageColor(.systemGray3)
 	}
 
 	func showError() {
-		guard !errorState else { return }
 		dots.forEach { $0.chageColor(.systemRed) }
+		HapticHandler.notification(type: .error).impact()
 		dotsStackView.shake()
-		errorState = true
+	}
+
+	func showSuccess() {
+		dots.forEach { $0.chageColor(.systemGreen) }
+		HapticHandler.notification(type: .success).impact()
+	}
+
+	func resetStatus() {
+		dots.forEach { $0.chageColor(.systemGray3) }
+		isFill = false
+		activeDotsCount = 0
 	}
 }
 
 // MARK: - Private
 
 private extension DotIndicatorView {
-	func deactivateErrorState() {
-		dots.forEach { $0.chageColor(.systemGray3) }
-		errorState = false
-		activeDotsCount = 0
-	}
-
 	func createDots(count: Int) -> [UIView] {
 		(0 ..< count).map { _ in
 			let view = UIView()
@@ -117,7 +123,7 @@ fileprivate extension UIView {
 	}
 
 	func chageColor(_ color: UIColor) {
-		UIView.animate(withDuration: 0.3) {
+		UIView.animate(withDuration: 0.15) {
 			self.backgroundColor = color
 		}
 	}

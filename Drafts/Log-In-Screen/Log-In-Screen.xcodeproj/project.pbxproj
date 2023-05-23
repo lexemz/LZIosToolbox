@@ -15,6 +15,7 @@
 		F900582E2A136C8800F8FED7 /* NumericPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F900582D2A136C8800F8FED7 /* NumericPadView.swift */; };
 		F9AB918D2A1A9FF00054D564 /* PinPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AB918C2A1A9FF00054D564 /* PinPadView.swift */; };
 		F9AB91902A1AA3730054D564 /* DotIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AB918F2A1AA3730054D564 /* DotIndicatorView.swift */; };
+		F9AB91922A1BE1F90054D564 /* HapticHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AB91912A1BE1F90054D564 /* HapticHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		F900582D2A136C8800F8FED7 /* NumericPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericPadView.swift; sourceTree = "<group>"; };
 		F9AB918C2A1A9FF00054D564 /* PinPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinPadView.swift; sourceTree = "<group>"; };
 		F9AB918F2A1AA3730054D564 /* DotIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotIndicatorView.swift; sourceTree = "<group>"; };
+		F9AB91912A1BE1F90054D564 /* HapticHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				F90058192A13699B00F8FED7 /* AppDelegate.swift */,
 				F900581B2A13699B00F8FED7 /* SceneDelegate.swift */,
 				F900581D2A13699B00F8FED7 /* ViewController.swift */,
+				F9AB91912A1BE1F90054D564 /* HapticHandler.swift */,
 				F9AB918E2A1AA3580054D564 /* PinPadView */,
 				F90058222A13699D00F8FED7 /* Assets.xcassets */,
 				F90058242A13699D00F8FED7 /* LaunchScreen.storyboard */,
@@ -152,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F900581E2A13699B00F8FED7 /* ViewController.swift in Sources */,
+				F9AB91922A1BE1F90054D564 /* HapticHandler.swift in Sources */,
 				F900581A2A13699B00F8FED7 /* AppDelegate.swift in Sources */,
 				F9AB91902A1AA3730054D564 /* DotIndicatorView.swift in Sources */,
 				F900582E2A136C8800F8FED7 /* NumericPadView.swift in Sources */,
@@ -295,6 +299,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K5L7239SK4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Log-In-Screen/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -321,6 +326,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K5L7239SK4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Log-In-Screen/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
