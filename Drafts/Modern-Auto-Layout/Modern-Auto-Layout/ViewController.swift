@@ -9,23 +9,28 @@ import UIKit
 
 class ViewController: UIViewController {
 
+	@IBOutlet var customView: CustomView!
+
+	let padding: CGFloat = 50.0
+
+	private let manualCustomView: UIView = {
+		let view = CustomView()
+		view.backgroundColor = .green
+		return view
+	}()
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
-//		makeView()
+		view.addSubview(manualCustomView)
 	}
 
-	func makeView() {
-		// Use frame to set initial size and position of view
-		let view = UIView(frame: CGRect(x: 59, y: 220, width: 275, height: 150))
-		view.backgroundColor = .cyan
-
-		print(view.frame.size)
-
-//		view.autoresizingMask = [.flexibleWidth,
-//								 .flexibleBottomMargin]
-
-		self.view.addSubview(view)
+	override func viewWillLayoutSubviews() {
+		super.viewWillLayoutSubviews()
+		let width = view.bounds.width - 2 * padding
+		manualCustomView.frame = CGRect(x: padding,
+								 y: padding,
+								 width: width,
+								 height: 3 * padding)
 	}
-
 }
 
