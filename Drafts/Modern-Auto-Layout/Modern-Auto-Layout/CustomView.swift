@@ -10,7 +10,6 @@ import UIKit
 @IBDesignable
 final class CustomView: UIView {
 
-	@IBInspectable
 	var padding: CGFloat = 25 {
 		didSet {
 			setNeedsLayout()
@@ -29,7 +28,6 @@ final class CustomView: UIView {
 		return view
 	}()
 
-
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		setupView()
@@ -42,16 +40,7 @@ final class CustomView: UIView {
 
 	override func layoutSubviews() {
 		super.layoutSubviews()
-		setupLayoutManually()
-	}
 
-	private func setupView() {
-		[redView, blueView].forEach {
-			self.addSubview($0)
-		}
-	}
-
-	private func setupLayoutManually() {
 		let superWidth = bounds.width
 		let superHeight = bounds.height
 
@@ -61,5 +50,11 @@ final class CustomView: UIView {
 
 		blueView.frame = CGRect(x: padding, y: padding, width: itemWidth, height: itemHeight)
 		redView.frame = CGRect(x: padding * 2 + itemWidth, y: padding, width: itemWidth, height: itemHeight)
+	}
+
+	private func setupView() {
+		[redView, blueView].forEach {
+			self.addSubview($0)
+		}
 	}
 }

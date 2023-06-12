@@ -1,34 +1,26 @@
 //
-//  ViewController.swift
+//  MyViewController.swift
 //  Modern-Auto-Layout
 //
-//  Created by Igor Buzykin on 28.05.2023.
+//  Created by Igor Buzykin on 31.05.2023.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class MyViewController: UIViewController {
 
 	let button = UIButton(configuration: .tinted())
 
-	let padding: CGFloat = 50.0
-
-	private let manualCustomView: UIView = {
-		let view = CustomView()
-		view.backgroundColor = .green
-		return view
-	}()
 
 	override func loadView() {
 		let view = UIView()
-		view.backgroundColor = .systemBackground
+		view.backgroundColor = .red
 		self.view = view
 	}
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		print(#function, view.frame, view.safeAreaInsets)
-		view.addSubview(manualCustomView)
 	}
 
 	override func viewIsAppearing(_ animated: Bool) {
@@ -39,11 +31,6 @@ class ViewController: UIViewController {
 	override func viewWillLayoutSubviews() {
 		super.viewWillLayoutSubviews()
 		print(#function, view.frame, view.safeAreaInsets)
-		let width = view.bounds.width - 2 * padding
-		manualCustomView.frame = CGRect(x: padding,
-								 y: padding,
-								 width: width,
-								 height: 3 * padding)
 		configureButton()
 	}
 
@@ -70,9 +57,7 @@ class ViewController: UIViewController {
 
 
 		let action = UIAction { _ in
-			let vc = MyViewController()
-			vc.modalPresentationStyle = .fullScreen
-			self.present(vc, animated: true)
+			self.dismiss(animated: true)
 		}
 		button.addAction(action, for: .touchUpInside)
 	}
