@@ -7,10 +7,11 @@
 
 import UIKit
 
-class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
+class SceneDelegate: UIResponder {
 	var window: UIWindow?
+}
 
+extension SceneDelegate: UIWindowSceneDelegate {
 	func scene(
 		_ scene: UIScene,
 		willConnectTo session: UISceneSession,
@@ -18,24 +19,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 	) {
 		guard let scene = (scene as? UIWindowScene) else { return }
 		window = UIWindow(windowScene: scene)
-		window?.rootViewController = ViewController()
+		window?.rootViewController = UINavigationController(rootViewController: SelectionViewController())
 		window?.makeKeyAndVisible()
-	}
-
-	func sceneWillEnterForeground(_ scene: UIScene) {
-
-	}
-
-	func sceneDidEnterBackground(_ scene: UIScene) {
-
-	}
-
-	func sceneDidBecomeActive(_ scene: UIScene) {
-
-	}
-
-	func sceneWillResignActive(_ scene: UIScene) {
-
 	}
 }
 

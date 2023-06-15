@@ -31,10 +31,10 @@ class ViewController: UIViewController {
 		view.addSubview(manualCustomView)
 	}
 
-	override func viewIsAppearing(_ animated: Bool) {
-		super.viewIsAppearing(animated)
-		print(#function, view.frame, view.safeAreaInsets)
-	}
+//	override func viewIsAppearing(_ animated: Bool) {
+//		super.viewIsAppearing(animated)
+//		print(#function, view.frame, view.safeAreaInsets)
+//	}
 
 	override func viewWillLayoutSubviews() {
 		super.viewWillLayoutSubviews()
