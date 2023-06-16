@@ -1,16 +1,17 @@
 //
 //  AppDelegate.swift
-//  Modern-Auto-Layout
+//  ResponderChain
 //
-//  Created by Igor Buzykin on 28.05.2023.
+//  Created by Igor Buzykin on 03.06.2023.
 //
 
 import UIKit
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
+class AppDelegate: UIResponder, UIApplicationDelegate, ListAction {
+	func didSelectItem() {
+		print(#function, "app delegate")
+	}
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 		// Override point for customization after application launch.
@@ -31,6 +32,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		// Use this method to release any resources that were specific to the discarded scenes, as they will not return.
 	}
 
+	@objc
+	func buttonTap() {
+		print(#function)
+	}
+
 
 }
 
+@objc protocol ListAction: AnyObject {
+  func didSelectItem()
+}

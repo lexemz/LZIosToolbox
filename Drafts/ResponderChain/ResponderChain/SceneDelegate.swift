@@ -1,13 +1,17 @@
 //
 //  SceneDelegate.swift
-//  Modern-Auto-Layout
+//  ResponderChain
 //
-//  Created by Igor Buzykin on 28.05.2023.
+//  Created by Igor Buzykin on 03.06.2023.
 //
 
 import UIKit
 
-class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+class SceneDelegate: UIResponder, UIWindowSceneDelegate, ListAction {
+	func didSelectItem() {
+		print(#function, "scene delegate")
+	}
+	
 
 	var window: UIWindow?
 
