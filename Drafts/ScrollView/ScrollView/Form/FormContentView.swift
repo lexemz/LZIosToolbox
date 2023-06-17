@@ -27,11 +27,19 @@ final class FormContentView: UIView {
 		return textField
 	}()
 
+	lazy var fattyField: UITextField = {
+		let textField = UITextField()
+		textField.placeholder = "Fatty"
+		textField.translatesAutoresizingMaskIntoConstraints = false
+		textField.backgroundColor = .systemGreen
+		return textField
+	}()
+
 	lazy var policyLabel: UILabel = {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
 		label.numberOfLines = 0
-		label.text = "Нажимая на кропку вы соглашаетесь продать душу Тиму Куку."
+		label.text = "Нажимая на кнопку вы соглашаетесь продать душу Тиму Куку."
 		return label
 	}()
 
@@ -51,6 +59,7 @@ private extension FormContentView {
 		let subviews = [
 			nameField,
 			surnameField,
+			fattyField,
 			policyLabel
 		]
 
@@ -67,10 +76,15 @@ private extension FormContentView {
 			surnameField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
 			surnameField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
 
+			fattyField.topAnchor.constraint(equalTo: surnameField.bottomAnchor, constant: 40),
+			fattyField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+			fattyField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+			fattyField.heightAnchor.constraint(equalToConstant: 250),
+
 			policyLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
 			policyLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
 			policyLabel.topAnchor.constraint(
-				greaterThanOrEqualTo: surnameField.bottomAnchor,
+				greaterThanOrEqualTo: fattyField.bottomAnchor,
 				constant: 20
 			),
 			policyLabel.bottomAnchor.constraint(

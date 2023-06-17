@@ -117,9 +117,20 @@ private extension FormViewController {
 		else { return }
 		let keyboardSize = keyboardFrame.cgRectValue
 		let keyboardHeight = keyboardSize.height
-
-		self.formContentViewHeightConstraint.isActive = false
-		self.continueButtonBottomConstraint.constant = -keyboardHeight + self.view.safeAreaInsets.bottom - 10
+		scrollView.contentInset = UIEdgeInsets(
+			top: 0,
+			left: 0,
+			bottom: keyboardHeight + view.safeAreaInsets.bottom,
+			right: 0
+		)
+		scrollView.verticalScrollIndicatorInsets = UIEdgeInsets(
+			top: 0,
+			left: 0,
+			bottom: keyboardHeight - view.safeAreaInsets.bottom,
+			right: 0
+		)
+		formContentViewHeightConstraint.isActive = false
+		continueButtonBottomConstraint.constant = -keyboardHeight + view.safeAreaInsets.bottom - 10
 		UIView.animate(withDuration: keyboardDuration) {
 			self.view.layoutIfNeeded()
 		}
@@ -131,8 +142,10 @@ private extension FormViewController {
 			let keyboardDuration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double
 		else { return }
 
-		self.formContentViewHeightConstraint.isActive = true
-		self.continueButtonBottomConstraint.constant = Constants.buttonBottomDefaultInset.rawValue
+		scrollView.contentInset = .zero
+		scrollView.scrollIndicatorInsets = .zero
+		formContentViewHeightConstraint.isActive = true
+		continueButtonBottomConstraint.constant = Constants.buttonBottomDefaultInset.rawValue
 		UIView.animate(withDuration:keyboardDuration) {
 			self.view.layoutIfNeeded()
 		}
