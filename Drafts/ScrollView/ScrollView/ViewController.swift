@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-	let forecastView: ForeCastView = {
+	private lazy var forecastView: ForeCastView = {
 		let forecastView = ForeCastView()
 		forecastView.translatesAutoresizingMaskIntoConstraints = false
 		return forecastView
@@ -18,20 +18,31 @@ class ViewController: UIViewController {
 	private lazy var scrollView: UIScrollView = {
 		let scrollView = UIScrollView()
 		scrollView.translatesAutoresizingMaskIntoConstraints = false
-		scrollView.addSubview(forecastView)
+		scrollView.alwaysBounceVertical = true
 		return scrollView
+	}()
+
+	private lazy var infoButton: UIButton = {
+		let button = UIButton()
+		button.translatesAutoresizingMaskIntoConstraints = false
+		button.setImage(UIImage(systemName: "info.circle"), for: .normal)
+		button.tintColor = .systemBlue
+		return button
 	}()
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		configureUI()
-		configureLayout()
+		configureLayoutWithGuides()
 		configureKeyboardObservers()
 	}
 
 	func configureUI() {
+		title = "Scroll View Test"
+
 		view.addSubview(scrollView)
 		scrollView.addSubview(forecastView)
+		scrollView.addSubview(infoButton)
 
 		forecastView.setupView(
 			title: "Hellow friend",
@@ -54,6 +65,29 @@ class ViewController: UIViewController {
 			scrollView.bottomAnchor.constraint(equalTo: forecastView.bottomAnchor),
 
 			forecastView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
+		])
+	}
+
+	func configureLayoutWithGuides() {
+		let frameGuide = scrollView.frameLayoutGuide
+		let contentGuide = scrollView.contentLayoutGuide
+		let layoutMarginsGuide = scrollView.layoutMarginsGuide
+
+		NSLayoutConstraint.activate([
+			frameGuide.topAnchor.constraint(equalTo: view.topAnchor),
+			frameGuide.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+			frameGuide.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+			frameGuide.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+
+			contentGuide.topAnchor.constraint(equalTo: forecastView.topAnchor),
+			contentGuide.leadingAnchor.constraint(equalTo: forecastView.leadingAnchor),
+			contentGuide.trailingAnchor.constraint(equalTo: forecastView.trailingAnchor),
+			contentGuide.bottomAnchor.constraint(equalTo: forecastView.bottomAnchor),
+
+			contentGuide.widthAnchor.constraint(equalTo: frameGuide.widthAnchor),
+
+			infoButton.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor, constant: 0),
+			infoButton.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor, constant: 0)
 		])
 	}
 }
