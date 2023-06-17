@@ -14,6 +14,7 @@ final class FormContentView: UIView {
 
 		textField.placeholder = "Name"
 		textField.translatesAutoresizingMaskIntoConstraints = false
+		textField.backgroundColor = .systemGray6
 		return textField
 	}()
 
@@ -22,6 +23,7 @@ final class FormContentView: UIView {
 
 		textField.placeholder = "Surname"
 		textField.translatesAutoresizingMaskIntoConstraints = false
+		textField.backgroundColor = .systemGray6
 		return textField
 	}()
 
@@ -32,14 +34,6 @@ final class FormContentView: UIView {
 		label.text = "Нажимая на кропку вы соглашаетесь продать душу Тиму Куку."
 		return label
 	}()
-	private lazy var policyTopConstraint = policyLabel.topAnchor.constraint(
-		equalTo: surnameField.bottomAnchor,
-		constant: 20
-	)
-	private lazy var bolicyBottomConstraint = policyLabel.bottomAnchor.constraint(
-		equalTo: bottomAnchor,
-		constant: -20
-	)
 
 	override init(frame: CGRect) {
 		super.init(frame: frame)
@@ -49,13 +43,6 @@ final class FormContentView: UIView {
 
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
-	}
-
-	func updatePolicyPosition(isEditMode: Bool, withDuration duration: Double) {
-		policyTopConstraint.isActive = isEditMode
-		UIView.animate(withDuration: duration) {
-			self.setNeedsLayout()
-		}
 	}
 }
 
@@ -76,13 +63,20 @@ private extension FormContentView {
 			nameField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
 			nameField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
 
-			surnameField.topAnchor.constraint(equalTo: nameField.bottomAnchor, constant: 20),
+			surnameField.topAnchor.constraint(equalTo: nameField.bottomAnchor, constant: 40),
 			surnameField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
 			surnameField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
 
 			policyLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
 			policyLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-			bolicyBottomConstraint
+			policyLabel.topAnchor.constraint(
+				greaterThanOrEqualTo: surnameField.bottomAnchor,
+				constant: 20
+			),
+			policyLabel.bottomAnchor.constraint(
+				equalTo: bottomAnchor,
+				constant: -20
+			)
 		])
 	}
 }

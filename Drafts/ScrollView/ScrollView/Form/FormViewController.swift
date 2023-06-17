@@ -53,7 +53,7 @@ class FormViewController: UIViewController {
 
 		view.addSubview(scrollView)
 		scrollView.addSubview(formContentView)
-		scrollView.addSubview(continueButton)
+		view.addSubview(continueButton)
 	}
 
 	func configureLayoutWithGuides() {
@@ -62,7 +62,7 @@ class FormViewController: UIViewController {
 		let layoutMarginsGuide = scrollView.layoutMarginsGuide
 
 		continueButtonBottomConstraint =  continueButton.bottomAnchor.constraint(
-			equalTo: layoutMarginsGuide.bottomAnchor,
+			equalTo: view.safeAreaLayoutGuide.bottomAnchor,
 			constant: Constants.buttonBottomDefaultInset.rawValue
 		)
 
@@ -85,8 +85,8 @@ class FormViewController: UIViewController {
 			contentGuide.widthAnchor.constraint(equalTo: layoutMarginsGuide.widthAnchor),
 			formContentViewHeightConstraint,
 
-			continueButton.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor, constant: 10),
-			continueButton.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor, constant: -10),
+			continueButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
+			continueButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
 			continueButtonBottomConstraint,
 			continueButton.heightAnchor.constraint(equalToConstant: Constants.buttonHeight.rawValue)
 		])
@@ -117,9 +117,9 @@ private extension FormViewController {
 		else { return }
 		let keyboardSize = keyboardFrame.cgRectValue
 		let keyboardHeight = keyboardSize.height
-		formContentView.updatePolicyPosition(isEditMode: true, withDuration: keyboardDuration)
-		continueButtonBottomConstraint.constant = -keyboardHeight
-		formContentViewHeightConstraint.isActive = false
+
+		self.formContentViewHeightConstraint.isActive = false
+		self.continueButtonBottomConstraint.constant = -keyboardHeight + self.view.safeAreaInsets.bottom - 10
 		UIView.animate(withDuration: keyboardDuration) {
 			self.view.layoutIfNeeded()
 		}
@@ -127,10 +127,13 @@ private extension FormViewController {
 
 	@objc
 	func keyboardWillHideNotification(_ notification: NSNotification) {
-		formContentView.updatePolicyPosition(isEditMode: false, withDuration: 0.3)
-		continueButtonBottomConstraint.constant = Constants.buttonBottomDefaultInset.rawValue
-		formContentViewHeightConstraint.isActive = true
-		UIView.animate(withDuration: 0.3) {
+		guard
+			let keyboardDuration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double
+		else { return }
+
+		self.formContentViewHeightConstraint.isActive = true
+		self.continueButtonBottomConstraint.constant = Constants.buttonBottomDefaultInset.rawValue
+		UIView.animate(withDuration:keyboardDuration) {
 			self.view.layoutIfNeeded()
 		}
 	}
