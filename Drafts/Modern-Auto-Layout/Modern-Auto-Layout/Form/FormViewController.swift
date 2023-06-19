@@ -49,6 +49,7 @@ class FormViewController: UIViewController {
 	}
 
 	func configureUI() {
+		view.backgroundColor = .systemBackground
 		title = "Scroll View Test"
 
 		view.addSubview(scrollView)
