@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3122AECF2A49C35C003030C2 /* SelectionConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3122AECE2A49C35C003030C2 /* SelectionConfig.swift */; };
 		F93530D02A3B93BF002F567D /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93530CF2A3B93BF002F567D /* SelectionViewController.swift */; };
 		F97A3EBC2A404E5B003C0763 /* FormContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97A3EBA2A404E5B003C0763 /* FormContentView.swift */; };
 		F97A3EBD2A404E5B003C0763 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97A3EBB2A404E5B003C0763 /* FormViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3122AECE2A49C35C003030C2 /* SelectionConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionConfig.swift; sourceTree = "<group>"; };
 		F93530CF2A3B93BF002F567D /* SelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewController.swift; sourceTree = "<group>"; };
 		F97A3EBA2A404E5B003C0763 /* FormContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormContentView.swift; sourceTree = "<group>"; };
 		F97A3EBB2A404E5B003C0763 /* FormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				F93530CF2A3B93BF002F567D /* SelectionViewController.swift */,
 				F9CA84BC2A236ACA00A35769 /* AppDelegate.swift */,
 				F9CA84BE2A236ACA00A35769 /* SceneDelegate.swift */,
+				3122AECE2A49C35C003030C2 /* SelectionConfig.swift */,
 				F9CA84C52A236ACB00A35769 /* Assets.xcassets */,
 				F9CA84C72A236ACB00A35769 /* LaunchScreen.storyboard */,
 				F9CA84CA2A236ACB00A35769 /* Info.plist */,
@@ -182,6 +185,7 @@
 				F97A3EBC2A404E5B003C0763 /* FormContentView.swift in Sources */,
 				F9CA84C12A236ACA00A35769 /* ViewController.swift in Sources */,
 				F93530D02A3B93BF002F567D /* SelectionViewController.swift in Sources */,
+				3122AECF2A49C35C003030C2 /* SelectionConfig.swift in Sources */,
 				F9C1417D2A25312B0037708E /* CustomView.swift in Sources */,
 				F9CA84BD2A236ACA00A35769 /* AppDelegate.swift in Sources */,
 				F9CA84BF2A236ACA00A35769 /* SceneDelegate.swift in Sources */,
@@ -329,6 +333,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -355,6 +360,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

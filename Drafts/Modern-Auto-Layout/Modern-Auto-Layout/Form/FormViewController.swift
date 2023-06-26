@@ -132,6 +132,8 @@ private extension FormViewController {
 		)
 		formContentViewHeightConstraint.isActive = false
 		continueButtonBottomConstraint.constant = -keyboardHeight + view.safeAreaInsets.bottom - 10
+
+		// FIXME: Проработать, если нет времени анимации
 		UIView.animate(withDuration: keyboardDuration) {
 			self.view.layoutIfNeeded()
 		}

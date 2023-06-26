@@ -18,8 +18,12 @@ extension SceneDelegate: UIWindowSceneDelegate {
 		options connectionOptions: UIScene.ConnectionOptions
 	) {
 		guard let scene = (scene as? UIWindowScene) else { return }
+
+		let selectionVC = SelectionViewController(items: itemsManifest)
+		selectionVC.title = "Modern Auto Layout"
+
 		window = UIWindow(windowScene: scene)
-		window?.rootViewController = UINavigationController(rootViewController: SelectionViewController())
+		window?.rootViewController = UINavigationController(rootViewController: selectionVC)
 		window?.makeKeyAndVisible()
 	}
 }

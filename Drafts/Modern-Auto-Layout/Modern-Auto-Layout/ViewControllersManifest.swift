@@ -7,8 +7,14 @@
 
 import UIKit
 
-let manifestViewControllers: [UIViewController] = [
-	ViewController(),
-	MyViewController(),
-	FormViewController()
+let itemsManifest: [TableViewItemProtocol] = [
+	TableViewItem(title: "Scroll View", viewController: FormViewController()),
+
+	TableViewItemsGroup(
+		title: "Chapter 2",
+		items: [
+			TableViewItem(title: "ViewController", viewController: ViewController()),
+			TableViewItem(title: "MyViewController", viewController: MyViewController())
+		]
+	)
 ]
