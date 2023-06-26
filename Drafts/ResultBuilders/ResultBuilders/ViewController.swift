@@ -29,11 +29,16 @@ class ViewController: UIViewController {
 	private func createConstraints() {
 		let safeArea = view.safeAreaLayoutGuide
 
-		NSLayoutConstraint.activate {
+		var constraints = NSLayoutConstraint.arrayOf {
 			redView.topAnchor.constraint(equalTo: safeArea.topAnchor)
 			redView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor)
+		}
+
+		constraints.append {
 			redView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor)
 			redView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor)
 		}
+
+		constraints.activate()
 	}
 }

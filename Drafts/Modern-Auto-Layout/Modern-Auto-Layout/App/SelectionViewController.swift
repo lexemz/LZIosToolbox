@@ -50,11 +50,11 @@ final class SelectionViewController: UITableViewController {
 		if let item = item as? TableViewItemsGroup {
 			let selectionVC = SelectionViewController(items: item.items)
 			selectionVC.title = item.title
-			navigationController?.pushViewController(selectionVC, animated: true)
+			navigationController?.pushViewController(selectionVC, animated: false)
 		}
 
 		if let item = item as? TableViewItem {
-			navigationController?.pushViewController(item.viewController, animated: true)
+			navigationController?.pushViewController(item.viewController, animated: false)
 		}
 		tableView.deselectRow(at: indexPath, animated: true)
 	}

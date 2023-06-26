@@ -16,6 +16,6 @@ extension NSLayoutConstraint: ConstraintsGroupRepresented {
 	var constraints: [NSLayoutConstraint] { [self] }
 }
 
-extension Array: ConstraintsGroupRepresented where Element == NSLayoutConstraint {
+extension Array: ConstraintsGroupRepresented where Element: NSLayoutConstraint {
 	var constraints: [NSLayoutConstraint] { self }
 }

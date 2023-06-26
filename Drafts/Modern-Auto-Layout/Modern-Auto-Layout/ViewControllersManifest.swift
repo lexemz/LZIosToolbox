@@ -16,5 +16,12 @@ let itemsManifest: [TableViewItemProtocol] = [
 			TableViewItem(title: "ViewController", viewController: ViewController()),
 			TableViewItem(title: "MyViewController", viewController: MyViewController())
 		]
+	),
+
+	TableViewItemsGroup(
+		title: "Chapter 3",
+		items: [
+			TableViewItem(title: "Ex 5", viewController: ViewController_C3_1.instantiate(name: "Chapter3")),
+		]
 	)
 ]
