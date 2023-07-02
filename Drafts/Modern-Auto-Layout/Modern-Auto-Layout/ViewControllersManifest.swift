@@ -31,7 +31,10 @@ let itemsManifest: [TableViewItemProtocol] = [
 	TableViewItemsGroup(
 		title: "Chapter 4",
 		items: [
-			TableViewItem(title: "Theme 1", viewController: ViewController_C4_1.instantiate(name: "Chapter 4"))
+			TableViewItem(title: "Chapter 4 Challange 1", viewController: ViewController_C4_1.instantiate(name: "Chapter 4")),
+			TableViewItem(title: "Chapter 4 Challange 2", viewController: ViewController_C4_2.instantiate(name: "Chapter 4")),
+			TableViewItem(title: "Chapter 4 Challange 3", viewController: ViewController_C4_3.instantiate(name: "Chapter 4")),
+			TableViewItem(title: "Chapter 4 Challange 4", viewController: ViewController_C4_4.instantiate(name: "Chapter 4")),
 		]
 	)
 ]
