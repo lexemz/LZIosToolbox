@@ -9,16 +9,23 @@ import UIKit
 
 class ViewController: UIViewController {
 
-	private lazy var redView: UIView = {
+	private lazy var greenView: UIView = {
 		let view = UIView()
-		view.backgroundColor = .red
+		view.backgroundColor = .systemGreen
+		return view
+	}()
+
+	private lazy var yellowView: UIView = {
+		let view = UIView()
+		view.backgroundColor = .systemYellow
 		return view
 	}()
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		view.addSubviews {
-			redView
+			greenView
+			yellowView
 		}
 		createConstraints()
 	}
@@ -28,17 +35,20 @@ class ViewController: UIViewController {
 
 	private func createConstraints() {
 		let safeArea = view.safeAreaLayoutGuide
+		NSLayoutConstraint.activate {
+			greenView.centerYAnchor.constraint(equalTo: safeArea.centerYAnchor)
 
-		var constraints = NSLayoutConstraint.arrayOf {
-			redView.topAnchor.constraint(equalTo: safeArea.topAnchor)
-			redView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor)
+			greenView.heightAnchor.constraint(equalToConstant: 100)
+			greenView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 20)
+			greenView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -20)
+
+			yellowView.heightAnchor.constraint(equalToConstant: 100)
+			yellowView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 20)
+			yellowView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -20)
+
+//			yellowView.bottomAnchor.constraint(equalTo: greenView.topAnchor, constant: -8)
+
+			greenView.topAnchor.constraint(equalTo: yellowView.bottomAnchor, constant: 8)
 		}
-
-		constraints.append {
-			redView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor)
-			redView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor)
-		}
-
-		constraints.activate()
 	}
 }
