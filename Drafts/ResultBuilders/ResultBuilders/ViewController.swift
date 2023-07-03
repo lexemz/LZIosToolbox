@@ -38,9 +38,11 @@ class ViewController: UIViewController {
 		NSLayoutConstraint.activate {
 			greenView.centerYAnchor.constraint(equalTo: safeArea.centerYAnchor)
 
-			greenView.heightAnchor.constraint(equalToConstant: 100)
-			greenView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 20)
-			greenView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -20)
+			[
+			greenView.heightAnchor.constraint(equalToConstant: 100),
+			greenView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 20),
+			greenView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -20),
+			]
 
 			yellowView.heightAnchor.constraint(equalToConstant: 100)
 			yellowView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 20)

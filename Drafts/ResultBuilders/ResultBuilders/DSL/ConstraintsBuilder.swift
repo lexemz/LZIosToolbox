@@ -10,49 +10,55 @@ import UIKit
 @resultBuilder
 struct ConstraintsBuilder {
 
-	/// Собрать массив коснтреинтов
-	static func buildBlock(_ constraintsGroup: ConstraintsGroupRepresented...) -> [NSLayoutConstraint] {
-		print("buildBlock(_ constraintsGroup: ConstraintsGroupRepresented...)")
-		constraintsGroup.forEach { print($0.constraints) }
-		print()
+	/// Собрать пустой массив констреинтов
+	/// 
+	/// - Returns: Массив констреинтов
+	static func buildBlock() -> [NSLayoutConstraint] {
+		[]
+	}
 
-		return constraintsGroup.flatMap { $0.constraints }
+	/// Собрать массив коснтреинтов
+	///
+	/// - Parameter constraints: Массивы констреинтов
+	/// - Returns: Единый массив констреинтов
+	static func buildBlock(_ constraints: [NSLayoutConstraint]...) -> [NSLayoutConstraint] {
+		constraints.flatMap { $0 }
+	}
+
+	/// Обработчик одного констреинта
+	///
+	/// - Parameter singleConstraint: Констреинт
+	/// - Returns: Массив констреинтов с единственным массивом
+	static func buildExpression(_ singleConstraint: NSLayoutConstraint) -> [NSLayoutConstraint] {
+		[singleConstraint]
+	}
+
+	/// Обработчик массива констреинтов
+	///
+	/// - Parameter severalConstraints: Несколько констреинтов
+	/// - Returns: Массив из нескольных констреинтов
+	static func buildExpression(_ severalConstraints: [NSLayoutConstraint]) -> [NSLayoutConstraint] {
+		severalConstraints
 	}
 
 	/// Собрать массив констреинтов с возможностью **optional unwrap**
-	static func buildOptional(_ constraintsGroup: [ConstraintsGroupRepresented]?) -> [NSLayoutConstraint] {
-		print("buildOptional(_ constraintsGroup: [ConstraintsGroupRepresented]?)")
-		constraintsGroup?.forEach { print($0.constraints) }
-		print()
-
-		return constraintsGroup?.flatMap { $0.constraints } ?? []
+	static func buildOptional(_ constraints: [NSLayoutConstraint]?) -> [NSLayoutConstraint] {
+		constraints ?? []
 	}
 
 	/// Собрать массив констреинтов с обработкой if condition
-	static func buildEither(first constraintsGroup: [ConstraintsGroupRepresented]) -> [NSLayoutConstraint] {
-		print("buildEither(first constraintsGroup: [ConstraintsGroupRepresented])")
-		constraintsGroup.forEach { print($0.constraints) }
-		print()
-		
-		return constraintsGroup.flatMap { $0.constraints }
+	static func buildEither(first constraints: [NSLayoutConstraint]) -> [NSLayoutConstraint] {
+		constraints
 	}
 
 	/// Собрать массив констреинтов с обработкой else condition
-	static func buildEither(second constraintsGroup: [ConstraintsGroupRepresented]) -> [NSLayoutConstraint] {
-		print("buildEither(second constraintsGroup: [ConstraintsGroupRepresented])")
-		constraintsGroup.forEach { print($0.constraints) }
-		print()
-
-		return constraintsGroup.flatMap { $0.constraints }
+	static func buildEither(second constraints: [NSLayoutConstraint]) -> [NSLayoutConstraint] {
+		constraints
 	}
 
 	/// Собрать массив коснтреинтов на основе итерируемых коллекций
 	static func buildArray(_ components: [[NSLayoutConstraint]]) -> [NSLayoutConstraint] {
-		print("buildArray(_ components: [[NSLayoutConstraint]])")
-		components.forEach { print($0.constraints) }
-		print()
-
-		return components.flatMap { $0 }
+		components.flatMap { $0 }
 	}
 }
 
